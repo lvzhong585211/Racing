@@ -1,0 +1,24 @@
+{
+	"version":"LAYAMATERIAL:01",
+	"props":{
+		"exposure":0.74,
+		"rotation":344,
+		"vectors":[
+			{
+				"name":"tintColor",
+				"value":[
+					0.6985294,
+					0.6985294,
+					0.6985294,
+					1
+				]
+			}
+		],
+		"textures":[
+			{
+				"name":"textureCube",
+				"path":"night.ltc"
+			}
+		]
+	}
+}
