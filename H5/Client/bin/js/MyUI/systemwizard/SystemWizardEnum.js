@@ -1,0 +1,67 @@
+/*
+* 系统提示引导类型
+*/
+var SystemWizardEnum;
+(function (SystemWizardEnum) {
+    SystemWizardEnum[SystemWizardEnum["None"] = 0] = "None";
+    SystemWizardEnum[SystemWizardEnum["NewTask"] = 1] = "NewTask";
+    SystemWizardEnum[SystemWizardEnum["CompleteTask"] = 2] = "CompleteTask";
+    SystemWizardEnum[SystemWizardEnum["BuyLifeDrugs"] = 3] = "BuyLifeDrugs";
+    SystemWizardEnum[SystemWizardEnum["BuyMagicDrugs"] = 4] = "BuyMagicDrugs";
+    SystemWizardEnum[SystemWizardEnum["NewEquip"] = 5] = "NewEquip";
+    SystemWizardEnum[SystemWizardEnum["HintBiGuan"] = 6] = "HintBiGuan";
+    SystemWizardEnum[SystemWizardEnum["SkillUpLevel"] = 7] = "SkillUpLevel";
+    SystemWizardEnum[SystemWizardEnum["SkillLearn"] = 8] = "SkillLearn";
+    SystemWizardEnum[SystemWizardEnum["GiftUpLevel"] = 9] = "GiftUpLevel";
+    SystemWizardEnum[SystemWizardEnum["GiftLogin"] = 10] = "GiftLogin";
+    SystemWizardEnum[SystemWizardEnum["GiftOnline"] = 11] = "GiftOnline";
+    SystemWizardEnum[SystemWizardEnum["LingLiFull"] = 12] = "LingLiFull";
+    SystemWizardEnum[SystemWizardEnum["GetHorseCard"] = 13] = "GetHorseCard";
+    SystemWizardEnum[SystemWizardEnum["GetPetCard"] = 14] = "GetPetCard";
+    SystemWizardEnum[SystemWizardEnum["FirstTask"] = 15] = "FirstTask";
+    SystemWizardEnum[SystemWizardEnum["NewLingLiDan"] = 16] = "NewLingLiDan";
+    SystemWizardEnum[SystemWizardEnum["LingLi2000"] = 17] = "LingLi2000";
+    SystemWizardEnum[SystemWizardEnum["EnterAutoFight"] = 18] = "EnterAutoFight";
+    SystemWizardEnum[SystemWizardEnum["HintNewRoleGift"] = 19] = "HintNewRoleGift";
+    SystemWizardEnum[SystemWizardEnum["NewLifeReserve"] = 20] = "NewLifeReserve";
+    SystemWizardEnum[SystemWizardEnum["NewMagicReserve"] = 21] = "NewMagicReserve";
+    SystemWizardEnum[SystemWizardEnum["NewDblExpCard"] = 22] = "NewDblExpCard";
+    SystemWizardEnum[SystemWizardEnum["NewDblLingLiCard"] = 23] = "NewDblLingLiCard";
+    SystemWizardEnum[SystemWizardEnum["NewDblTongQianCard"] = 24] = "NewDblTongQianCard";
+    SystemWizardEnum[SystemWizardEnum["CleanUpBag"] = 25] = "CleanUpBag";
+    SystemWizardEnum[SystemWizardEnum["GetCopyMapAward"] = 26] = "GetCopyMapAward";
+    SystemWizardEnum[SystemWizardEnum["NewMainTask"] = 27] = "NewMainTask";
+    SystemWizardEnum[SystemWizardEnum["HintEnterCopy"] = 28] = "HintEnterCopy";
+    SystemWizardEnum[SystemWizardEnum["NextPaoHuanTask"] = 29] = "NextPaoHuanTask";
+    SystemWizardEnum[SystemWizardEnum["HintLeaveLaoFang"] = 30] = "HintLeaveLaoFang";
+    SystemWizardEnum[SystemWizardEnum["HintYaBiaoFailed"] = 31] = "HintYaBiaoFailed";
+    SystemWizardEnum[SystemWizardEnum["HintYaBiaoSuccess"] = 32] = "HintYaBiaoSuccess";
+    SystemWizardEnum[SystemWizardEnum["HintYaBiaoLost"] = 33] = "HintYaBiaoLost";
+    SystemWizardEnum[SystemWizardEnum["HintYaBiaoOtherLine"] = 34] = "HintYaBiaoOtherLine";
+    SystemWizardEnum[SystemWizardEnum["HintNoChongXueNum"] = 35] = "HintNoChongXueNum";
+    SystemWizardEnum[SystemWizardEnum["HintNoLingLi"] = 36] = "HintNoLingLi";
+    SystemWizardEnum[SystemWizardEnum["HintNoLingFu"] = 37] = "HintNoLingFu";
+    SystemWizardEnum[SystemWizardEnum["HintYaBiaoStart"] = 38] = "HintYaBiaoStart";
+    SystemWizardEnum[SystemWizardEnum["HintCangBaoGeStart"] = 39] = "HintCangBaoGeStart";
+    SystemWizardEnum[SystemWizardEnum["HintNoYuanBao"] = 40] = "HintNoYuanBao";
+    SystemWizardEnum[SystemWizardEnum["HintNoYaBiaoLing"] = 41] = "HintNoYaBiaoLing";
+    SystemWizardEnum[SystemWizardEnum["HintNoXiaoLaBa"] = 42] = "HintNoXiaoLaBa";
+    SystemWizardEnum[SystemWizardEnum["HintSecondTask"] = 43] = "HintSecondTask";
+    SystemWizardEnum[SystemWizardEnum["HintWuXingStart"] = 44] = "HintWuXingStart";
+    SystemWizardEnum[SystemWizardEnum["HintDblExpAndLingLiStart"] = 45] = "HintDblExpAndLingLiStart";
+    SystemWizardEnum[SystemWizardEnum["HintSkillUpLevel"] = 46] = "HintSkillUpLevel";
+    SystemWizardEnum[SystemWizardEnum["HintLingDiZhanStart"] = 47] = "HintLingDiZhanStart";
+    SystemWizardEnum[SystemWizardEnum["HintHuangChengZhanStart"] = 48] = "HintHuangChengZhanStart";
+    SystemWizardEnum[SystemWizardEnum["HintReloadXml"] = 49] = "HintReloadXml";
+    SystemWizardEnum[SystemWizardEnum["HintZuoJiLianHuaZhiFull"] = 49] = "HintZuoJiLianHuaZhiFull";
+    SystemWizardEnum[SystemWizardEnum["HintNoGoodsToBuy"] = 50] = "HintNoGoodsToBuy";
+    SystemWizardEnum[SystemWizardEnum["NewTongQianBao"] = 51] = "NewTongQianBao";
+    SystemWizardEnum[SystemWizardEnum["HintSuiTangBattleAward"] = 52] = "HintSuiTangBattleAward";
+    SystemWizardEnum[SystemWizardEnum["HintUseKunLunJingAward"] = 53] = "HintUseKunLunJingAward";
+    SystemWizardEnum[SystemWizardEnum["HintNoChuanSongJuan"] = 54] = "HintNoChuanSongJuan";
+    SystemWizardEnum[SystemWizardEnum["HintNoTongQian"] = 55] = "HintNoTongQian";
+    SystemWizardEnum[SystemWizardEnum["HintMUTiShiGoods"] = 56] = "HintMUTiShiGoods";
+    SystemWizardEnum[SystemWizardEnum["HintMUNewChengJiu"] = 57] = "HintMUNewChengJiu";
+    SystemWizardEnum[SystemWizardEnum["HintMUNewHuoYue"] = 58] = "HintMUNewHuoYue";
+})(SystemWizardEnum || (SystemWizardEnum = {}));
+//# sourceMappingURL=SystemWizardEnum.js.map

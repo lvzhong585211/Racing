@@ -1,0 +1,65 @@
+/*
+* 系统提示引导类型
+*/
+enum SystemWizardEnum {
+        None = 0,           /// 无定义
+        NewTask = 1,   /// 新任务
+        CompleteTask = 2,       /// 完成任务
+        BuyLifeDrugs = 3,        /// 补血的药品短缺
+        BuyMagicDrugs = 4,       /// 补蓝的药品短缺
+        NewEquip = 5,          /// 获得了新装备
+        HintBiGuan = 6,         /// 提示领取闭关经验和闭关灵力
+        SkillUpLevel = 7,        /// 提示技能升级
+        SkillLearn = 8,              /// 提示技能学习
+        GiftUpLevel = 9,             /// 提示升级有礼
+        GiftLogin = 10,              /// 提示登录有礼
+        GiftOnline = 11,             /// 提示在线有礼
+        LingLiFull = 12,            /// 提示灵力满
+        GetHorseCard = 13,      /// 提示获取到了坐骑卡
+        GetPetCard = 14,            /// 提示获取到了宠物卡   
+        FirstTask = 15,                 /// 提示新角色第一个任务
+        NewLingLiDan = 16,      /// 提示得到了灵力丹
+        LingLi2000 = 17,          /// 提示灵力超过了2000
+        EnterAutoFight = 18,    /// 提示是否进入自动挂机模式
+        HintNewRoleGift = 19,       /// 提示新手见面有礼可以领取了
+        NewLifeReserve = 20,        /// 提示使用生命储备
+        NewMagicReserve = 21,        /// 提示使用魔法储备
+        NewDblExpCard = 22,          /// 提示使用双倍经验卡
+        NewDblLingLiCard = 23,      /// 提示使用双倍灵力卡
+        NewDblTongQianCard = 24,         /// 提示使用双倍绑定金币卡
+        CleanUpBag = 25,            /// 提示清理背包的物品到仓库
+        GetCopyMapAward = 26,       /// 提示领取副本的奖励
+        NewMainTask = 27,       /// 提示可以重新接取主线任务
+        HintEnterCopy = 28,          /// 提示进入练级的副本
+        NextPaoHuanTask = 29,       /// 提示接取下一个日跑环任务
+        HintLeaveLaoFang = 30,       /// 提示可以离开牢房
+        HintYaBiaoFailed = 31,          /// 提示押镖失败和获取的奖励
+        HintYaBiaoSuccess = 32,          /// 提示押镖成功和获取的奖励
+        HintYaBiaoLost = 33,            /// 提示押镖时，镖车不在; 去找镖车
+        HintYaBiaoOtherLine = 34,       /// 提示押镖时，镖车在其他线
+        HintNoChongXueNum = 35,     /// 提示无冲穴次数
+        HintNoLingLi = 36,           /// 提示无灵力
+        HintNoLingFu = 37,           /// 提示无灵符
+        HintYaBiaoStart = 38,           /// 提示押镖活动开始了
+        HintCangBaoGeStart = 39,        /// 提示藏宝阁活动开始了
+        HintNoYuanBao = 40,          /// 提示无钻石
+        HintNoYaBiaoLing = 41,      /// 提示无押镖令牌
+        HintNoXiaoLaBa = 42,        /// 提示无小喇叭
+        HintSecondTask = 43,         /// 提示接取支线任务
+        HintWuXingStart = 44,       /// 提示五行奇阵活动开始了
+        HintDblExpAndLingLiStart = 45,      /// 提示双倍经验和灵力时间开始了
+        HintSkillUpLevel = 46,           /// 提示技能自动升级结果
+        HintLingDiZhanStart = 47,       /// 提示领地战开始了
+        HintHuangChengZhanStart = 48,           /// 提示皇城战开始了
+        HintReloadXml = 49,         /// 提示重新加载xml
+        HintZuoJiLianHuaZhiFull = 49,            /// 提示坐骑炼化值满
+        HintNoGoodsToBuy = 50,           /// 提示没有物品去购买
+        NewTongQianBao = 51,            /// 提示使用绑定金币包
+        HintSuiTangBattleAward = 52,            /// 提示隋唐争霸赛奖励
+        HintUseKunLunJingAward = 53,        /// 提示使用昆仑镜物品
+        HintNoChuanSongJuan = 54,           /// 提示无传送卷
+        HintNoTongQian = 55,            /// 提示无金币
+        HintMUTiShiGoods = 56,      /// 提示MU特定物品
+        HintMUNewChengJiu = 57,     /// 提示MU特定物品
+        HintMUNewHuoYue = 58,        /// 提示MU特定物品
+}

@@ -1,0 +1,1136 @@
+/// 定义与服务器通信的消息体
+
+/// package NetMsg;
+syntax = "proto3";
+
+message CToGS_Login{
+    string Info = 1;
+}
+
+/// 物品数据
+message GoodsData {
+    int32 Id = 1; /// 数据库流水ID
+    int32 GoodsID = 2; /// 物品ID
+    int32 Using = 3; /// 是否正在使用
+    int32 Forge_level = 4; /// 锻造级别
+    string Starttime = 5; /// 开始使用的时间
+    string Endtime = 6; /// 物品使用截止时间
+    int32 Site = 7; /// 所在的位置(0: 包裹, 1:仓库)
+    int32 Quality = 8; /// 物品的品质(某些装备会分品质，不同的品质属性不同，用户改变属性后要记录下来)
+    string Props = 9; /// 根据品质随机抽取的扩展属性的索引列表
+    int32 GCount = 10; /// 物品数量
+    int32 Binding = 11; /// 是否绑定的物品(绑定的物品不可交易, 不可摆摊)
+    string Jewellist = 12; /// 根据品质随机抽取的扩展属性的索引列表
+    int32 BagIndex = 13; /// 根据品质随机抽取的扩展属性的索引列表
+    int32 SaleMoney1 = 14; /// 出售的金币价格
+    int32 SaleYuanBao = 15; /// 出售的钻石价格
+    int32 SaleYinPiao = 16; /// 出售的银两价格
+    int32 AddPropIndex = 17; /// 出售的银两价格
+    int32 BornIndex = 18; /// 增加一个天生属性的百分比
+    int32 Lucky = 19; /// 装备的幸运值
+    int32 Strong = 20; /// 装备的耐久度--如果是萌宠则表示羁当前经验
+    int32 ExcellenceInfo = 21; /// 卓越信息 -- 一个32位int32 每位代表一个卓越属性
+    int32 AppendPropLev = 22; /// 追加等级--如果是萌宠则表示羁绊的是哪个坐骑
+    int32 ChangeLifeLevForEquip = 23; /// 装备的重生级别
+    repeated int32 WashProps = 24; /// 装备洗炼属性 结构: 属性ID|属性值|属性ID|属性值|属性ID|属性值...
+    repeated int32 ElementhrtsProps = 25; /// 元素之心的属性
+}
+
+/// 翅膀数据
+message WingData {
+    int32 DbID = 1; /// 翅膀的数据库ID
+    int32 WingID = 2; /// 翅膀ID
+    int32 ForgeLevel = 3; /// 翅膀强化的次数
+    int64 AddDateTime = 4; /// 翅膀的领养时间
+    int32 JinJieFailedNum = 5; /// 本次进阶成功前失败的次数
+    int32 Using = 6; /// 是否使用
+    int32 StarExp = 7; /// 升星经验值
+    int32 ZhuLingNum = 8; /// 注灵次数
+    int32 ZhuHunNum = 9; /// 注魂次数
+}
+
+/// 选择角色的数据定义
+message RoleData4Selector {
+    int32 RoleID = 1; /// 当前的角色ID
+    string RoleName = 2; /// 当前的角色名称
+    int32 RoleSex = 3; /// 当前角色的性别
+    int32 Occupation = 4; /// 角色职业
+    int32 Level = 5; /// 角色级别
+    int32 Faction = 6; /// 角色所属的帮派
+    string OtherName = 7; /// 称号
+    repeated GoodsData GoodsDataList = 8; /// 物品数据
+    WingData MyWingData = 9; /// 翅膀数据列表
+    int32 CombatForce = 10; /// 战斗力
+    int32 AdmiredCount = 11; /// 被崇拜次数
+    int32 FashionWingsID = 12; /// 时装翅膀id
+    int64 SettingBitFlags = 13; /// 二态功能设置，参考ESettingBitFlag
+}
+
+/// 物品奖励数据
+message AwardsItemData {
+    int32 Occupation = 1; /// 职业标识
+    int32 GoodsID = 2; /// 物品ID
+    int32 GoodsNum = 3; /// 物品数量
+    int32 Binding = 4; /// 是否绑定物品
+    int32 Level = 5; /// 物品的级别
+    int32 Quality = 6; /// 物品的品质
+    string EndTime = 7; /// 物品的截止时间
+    int32 BornIndex = 8; /// 物品的天生
+    int32 RoleSex = 9; /// 性别标示
+    int32 AppendLev = 10; /// 物品追加等级
+    int32 IsHaveLuckyProp = 11; /// 是否有幸运
+    int32 ExcellencePorpValue = 12; /// 卓越属性值
+}
+
+/// 任务奖励数据
+message TaskAwardsData {
+    repeated AwardsItemData TaskawardList = 1; /// 任务奖励
+    repeated AwardsItemData OtherTaskawardList = 2; /// 任务其他奖励
+    int32 Moneyaward = 3; /// 任务金币奖励
+    int64 Experienceaward = 4; /// 任务经验奖励
+    int32 YinLiangaward = 5; /// 任务银两奖励
+    int32 LingLiaward = 6; /// 任务灵力奖励
+    int32 BindYuanBaoaward = 7; /// 任务绑定钻石奖励
+    int32 ZhenQiaward = 8; /// 真气奖励
+    int32 LieShaaward = 9; /// 猎杀值奖励
+    int32 WuXingaward = 10; /// 悟性值奖励
+    int32 NeedYuanBao = 11; /// 钻石完成需要消耗钻石
+    int32 JunGongaward = 12; /// 军功值奖励
+    int32 RongYuaward = 13; /// 荣誉奖励
+    int32 AddExperienceForDailyCircleTask = 14; /// 完成所有环额外经验奖励
+    int32 AddMoJingForDailyCircleTask = 15; /// 完成所有环额外斗气奖励
+    string AddGoodsForDailyCircleTask = 16; /// 完成所有环额外物品奖励
+    int32 MoJingaward = 17; /// 斗气奖励
+    int32 XingHunaward = 18; /// 星魂奖励
+    int32 FenMoAward = 19; /// 粉末奖励
+    int32 ShengwangAward = 20; /// 声望奖励
+    int32 SAwardBHMoney = 21; /// 帮会贡献值奖励
+}
+
+/// 任务数据
+message TaskData {
+    int32 DbID = 1; /// 数据库ID
+    int32 DoingTaskID = 2; /// 已经接受的任务列表
+    int32 DoingTaskVal1 = 3; /// 已经接受的任务数值列表1
+    int32 DoingTaskVal2 = 4; /// 已经接受的任务数值列表2
+    int32 DoingTaskFocus = 5; /// 已经接受的任务追踪列表
+    int64 AddDateTime = 6; /// 任务添加的时间(单位秒)
+    TaskAwardsData TaskAwards = 7; /// 任务奖励数据
+    int32 DoneCount = 8; /// 已经做过的次数
+    int32 StarLevel = 9; /// 任务星级信息
+}
+
+/// 技能数据
+message SkillData {
+    int32 DbID = 1; /// 数据库ID
+    int32 SkillID = 2; /// 技能类型ID
+    int32 SkillLevel = 3; /// 技能类型级别
+    int32 UsedNum = 4; /// 熟练度
+}
+
+/// 技能列表数据
+message SkillDataList
+{
+    repeated SkillData list = 1; /// 技能列表
+}
+
+/// 技能升级数据
+message SCSkillLevelUp
+{
+    int32 State = 1; /// 升级结果
+    int32 RoleID = 2; /// 角色ID
+    int32 SkillID = 3; /// 技能DBID
+    int32 SkillLevel = 4; /// 技能等级
+    int32 SkillUsedNum = 5; /// 熟练度
+}
+
+/// NPC的任务状态
+message NPCTaskState {
+    int32 NPCID = 1; /// NPC的ID
+    int32 TaskState = 2; /// 任务状态
+}
+
+/// Buffer数据
+message BufferData {
+    int32 BufferID = 1; /// Buffer的ID
+    int64 StartTime = 2; /// Buffer开始计时的时间
+    int32 BufferSecs = 3; /// Buffer计时秒数长度
+    int64 BufferVal = 4; /// Buffer的动态值
+    int32 BufferType = 5; /// Buffer的类型（0:DBBuffer、1:临时Buffer）
+}
+
+/// Buffer数据
+message OtherBufferData
+{
+    int32 BufferID = 1; /// Buffer的ID
+    int64 StartTime = 2; /// Buffer开始计时的时间
+    int32 BufferSecs = 3; /// Buffer计时秒数长度
+    int64 BufferVal = 4; /// Buffer的动态值
+    int32 BufferType = 5; /// Buffer的类型(0:DBBuffer 1:临时Buffer)
+    int32 RoleID = 6; /// buff所在对象的RoleID
+}
+
+/// buffer mini 数据
+message BufferDataMini
+{
+    int32 BufferID = 1; /// Buffer的ID
+    int64 StartTime = 2; /// Buffer开始计时的时间
+    int32 BufferSecs = 3; /// Buffer计时秒数长度
+    int64 BufferVal = 4; /// Buffer的动态值
+    int32 BufferType = 5; /// Buffer的类型(0:DBBuffer 1:临时Buffer)
+}
+
+/// 公告消息数据
+message DailyTaskData {
+    int32 HuanID = 1; /// 环的ID
+    string RecTime = 2; /// 跑环的日子
+    int32 RecNum = 3; /// 跑环的次数
+    int32 TaskClass = 4; /// 跑环的任务类型
+    int32 ExtDayID = 5; /// 额外的次数天ID
+    int32 ExtNum = 6; /// 额外的次数
+}
+
+/// 每日的已经冲穴次数数据
+message DailyJingMaiData {
+    string JmTime = 1; /// 冲穴的日子
+    int32 JmNum = 2; /// 冲穴的次数
+}
+
+/// 随身仓库数据
+message PortableBagData {
+    int32 ExtGridNum = 1; /// 用户扩展的格子个数
+    int32 GoodsUsedGridNum = 2; /// 当前物品使用的格子的个数（不存数据库，每次加载后计算）
+}
+
+/// 副本数据
+message FuBenData {
+    int32 FuBenID = 1; /// 副本的ID
+    int32 DayID = 2; /// 日期ID
+    int32 EnterNum = 3; /// 当日进入的次数
+    int32 QuickPassTimer = 4; /// 最快通关时间
+    int32 FinishNum = 5; /// 今日完成次数
+}
+
+/// 押镖数据
+message YaBiaoData {
+    int32 YaBiaoID = 1; /// 押镖ID
+    int64 StartTime = 2; /// 开始时间
+    int32 State = 3; /// 押镖状态（0:正常, 1:失败）
+    int32 LineID = 4; /// 接镖时的线路ID
+    int32 TouBao = 5; /// 是否做了投保, 0: 没做 1:做了
+    int32 YaBiaoDayID = 6; /// 押镖的日ID
+    int32 YaBiaoNum = 7; /// 每日押镖的次数
+    int32 TakeGoods = 8; /// 是否取到了货物
+}
+
+/// 领地占领数据（简单）
+message BangHuiLingDiItemData {
+    int32 LingDiID = 1; /// 领地ID
+    int32 BHID = 2; /// 帮派的ID
+    int32 ZoneID = 3; /// 区的ID
+    string BHName = 4; /// 帮派的名称
+    int32 LingDiTax = 5; /// 领地税率
+    string WarRequest = 6; /// 帮会战争请求字段
+    int32 AwardFetchDay = 7; /// 领地每日奖励领取日
+}
+
+/// 效果数据
+message TalentEffectInfo {
+    int32 EffectType = 1; /// 效果类型
+    int32 EffectID = 2; /// 效果id
+    double EffectValue = 3; /// 效果值
+}
+
+/// 效果项
+message TalentEffectItem {
+    int32 ID = 1; /// 效果id
+    int32 Level = 2; /// 效果等级
+    int32 TalentType = 3; /// 天赋类型
+    repeated TalentEffectInfo ItemEffectList = 4; /// 效果
+}
+
+/// 天赋数据
+message TalentData {
+    bool IsOpen = 1; /// 是否开放
+    int32 TotalCount = 2; /// 已获取天赋点数
+    int64 Exp = 3; /// 当前天赋点注入经验
+    map<int32, int32> CountList = 4; /// 效果分类加点数量
+    repeated TalentEffectItem EffectList = 5; /// 效果列表（天赋类型，效果列表）
+    map<int32, int32> SkillOneValue = 6; /// 单个技能（技能id，技能等级）
+    int32 SkillAllValue = 7; /// 全部技能
+    int32 State = 8; /// 状态
+    int32 Occupation = 9; /// 职业
+}
+
+/// 这个是从下面FluorescentGemData抽取出来的
+/// protobufjs貌似不支持map嵌套，先这样写 /// TODO...
+message FluorescentGemDataValue {
+    map<int32, GoodsData> value = 1; /// <宝石类型,宝石GoodsData>
+}
+
+/// 荧光宝石数据
+message FluorescentGemData {
+    map<int32, FluorescentGemDataValue> GemInstalList = 1; /// 宝石镶嵌列表 <部位id，<宝石类型,宝石GoodsData>>
+    map<int32, GoodsData> GemStoreList = 2; /// 宝石仓库列表 <格子索引,宝石GoodsData>
+}
+
+/// 魂石数据
+message SoulStoneData {
+    repeated GoodsData StonesInBag = 1; /// 魂石背包栏
+    repeated GoodsData StonesInUsing = 2; /// 魂石装备栏
+}
+
+/// 游戏中角色的数据定义
+message RoleData {
+    int32 RoleID = 1; /// 角色ID
+    string RoleName = 2; /// 角色名字
+    int32 RoleSex = 3; /// 性别
+    int32 Occupation = 4; /// 职业
+    int32 Level = 5; /// 角色级别
+    int32 Faction = 6; /// 角色所属的帮派
+    int32 Money1 = 7; /// 绑定金币
+    int32 Money2 = 8; /// 非绑定金币（绑定钻石）
+    int64 Experience = 9; /// 当前的经验
+    int32 PKMode = 10; /// 当前的PK模式
+    int32 PKValue = 11; /// 当前的PK值
+    int32 MapCode = 12; /// 所在的地图的编号
+    int32 PosX = 13; /// 当前所在的位置X坐标
+    int32 PosY = 14; /// 当前所在的位置Y坐标
+    int32 RoleDirection = 15; /// 当前的方向
+    int32 LifeV = 16; /// 当前的生命值
+    int32 MaxLifeV = 17; /// 最大的生命值
+    int32 MagicV = 18; /// 当前的魔法值
+    int32 MaxMagicV = 19; /// 最大的魔法值
+    int32 RolePic = 20; /// 当前的头像
+    int32 BagNum = 21; /// 当前背包格子数（已解锁可用的格子）
+    repeated TaskData TaskDataList = 22; /// 任务数据
+    repeated GoodsData GoodsDataList = 23; /// 物品数据
+    int32 BodyCode = 24; /// 衣服代号
+    int32 WeaponCode = 25; /// 武器代号
+    repeated SkillData SkillDataList = 26; /// 技能数据
+    string OtherName = 27; /// 称号
+    repeated NPCTaskState NPCTaskStateList = 28; /// NPC的任务状态
+    string MainQuickBarKeys = 29; /// 主快捷面板的映射
+    string OtherQuickBarKeys = 30; /// 辅助快捷面板的映射
+    int32 LoginNum = 31; /// 登陆的次数
+    int32 UserMoney = 32; /// 充值的钱数 => 钻石（非绑定钻石）
+    string StallName = 33; /// 摆摊的名称
+    int32 TeamID = 34; /// 组队的ID
+    int32 LeftFightSeconds = 35; /// 剩余的自动挂机时间
+    int32 TotalHorseCount = 36; /// 拥有的坐骑的数量
+    int32 HorseDbID = 37; /// 坐骑数据（当前骑乘）
+    int32 TotalPetCount = 38; /// 拥有的宠物的数量
+    int32 PetDbID = 39; /// 宠物数据（当前放出）
+    int32 InterPower = 40; /// 角色的内力值
+    int32 TeamLeaderRoleID = 41; /// 当前的组队中的队长ID
+    int32 YinLiang = 42; /// 系统绑定的银两 => 金币（非绑定金币）
+    int32 JingMaiBodyLevel = 43; /// 当前冲脉的重数
+    int32 JingMaiXueWeiNum = 44; /// 当前冲脉的累加穴位个数
+    int32 LastHorseID = 45; /// 上一次的坐骑ID
+    int32 DefaultSkillID = 46; /// 缺省的技能ID
+    int32 AutoLifeV = 47; /// 自动补血喝药的百分比
+    int32 AutoMagicV = 48; /// 自动补蓝喝药的百分比
+    repeated BufferData BufferDataList = 49; /// Buffer的数据列表
+    repeated DailyTaskData MyDailyTaskDataList = 50; /// 跑环的数据列表
+    int32 JingMaiOkNum = 51; /// 已经冲通的经脉的条数
+    DailyJingMaiData MyDailyJingMaiData = 52; /// 每日冲穴的次数数据
+    int32 NumSkillID = 53; /// 自动增加熟练度的被动技能ID
+    PortableBagData MyPortableBagData = 54; /// 随身仓库数据
+    int32 NewStep = 55; /// 见面有礼领取步骤
+    int64 StepTime = 56; /// 领取上一个见面有礼步骤的时间
+    int32 BigAwardID = 57; /// 大奖活动ID
+    int32 SongLiID = 58; /// 送礼活动ID
+    repeated FuBenData FuBenDataList = 59; /// 副本数据
+    int32 TotalLearnedSkillLevelCount = 60; /// 总共学习技能的级别
+    int32 CompletedMainTaskID = 61; /// 当前已经完成的主线任务ID
+    int32 PKPoint = 62; /// 当前的PK点
+    int32 LianZhan = 63; /// 最高连斩数
+    int64 StartPurpleNameTicks = 64; /// 紫名的开始时间
+    YaBiaoData MyYaBiaoData = 65; /// 押镖的数据
+    int64 BattleNameStart = 66; /// 角斗场荣誉称号开始时间
+    int32 BattleNameIndex = 67; /// 角斗场荣誉称号
+    int32 CZTaskID = 68; /// 充值TaskID
+    int32 HeroIndex = 69; /// 英雄逐擂的层数
+    int32 AllQualityIndex = 70; /// 全套品质的级别
+    int32 AllForgeLevelIndex = 71; /// 全套锻造级别
+    int32 AllJewelLevelIndex = 72; /// 全套宝石级别
+    int32 HalfYinLiangPeriod = 73; /// 银两折半优惠
+    int32 ZoneID = 74; /// 区ID
+    string BHName = 75; /// 帮会名称
+    int32 BHVerify = 76; /// 被邀请加入帮会时是否验证
+    int32 BHZhiWu = 77; /// 帮会职务
+    int32 BangGong = 78; /// 帮会帮贡
+    map<int32, BangHuiLingDiItemData> BangHuiLingDiItemsDict = 79; /// 内存领地帮会分布字典
+    int32 HuangDiRoleID = 80; /// 当前服的皇帝的ID
+    int32 HuangHou = 81; /// 是否皇后
+    map<int32, int32> PaiHangPosDict = 82; /// 自己在排行中的位置字典
+    int32 AutoFightingProtect = 83; /// 是否进入了挂机保护状态
+    int64 FSHuDunStart = 84; /// 法师的护盾开始的时间
+    int32 BattleWhichSide = 85; /// 大乱斗中的阵营ID
+    int32 LastMailID = 86; /// 上次的mailID
+    int32 IsVIP = 87; /// 上次的mailID
+    int64 OnceAwardFlag = 88; /// 单次奖励记录标志位
+    int32 Gold = 89; ///  系统绑定的金币 => 绑定钻石
+    int64 DSHideStart = 90; /// 道术隐身的时间
+    repeated int32 RoleCommonUseIntPamams = 91; /// 角色常用整形参数值列表
+    int32 FSHuDunSeconds = 92; /// 法师的护盾持续的秒数
+    int64 ZhongDuStart = 93; /// 中毒开始的时间
+    int32 ZhongDuSeconds = 94; /// 中毒持续的秒数
+    string KaiFuStartDay = 95; /// 开服日期
+    string RegTime = 96; /// 注册日期
+    string JieriStartDay = 97; /// 节日活动开始日期
+    int32 JieriDaysNum = 98; /// 节日活动持续天数
+    string HefuStartDay = 99; /// 合区活动开始时间
+    int32 JieriChengHao = 100; /// 节日称号
+    string BuChangStartDay = 101; /// 补偿开始时间
+    int64 DongJieStart = 102; /// 冻结开始的时间
+    int32 DongJieSeconds = 103; /// 冻结持续的秒数
+    string YueduDazhunpanStartDay = 104; /// 月度抽奖活动开始日期
+    int32 YueduDazhunpanStartDayNum = 105; /// 月度抽奖活动持续天数
+    int32 RoleStrength = 106; /// 力量
+    int32 RoleIntelligence = 107; /// 智力
+    int32 RoleDexterity = 108; /// 敏捷
+    int32 RoleConstitution = 109; /// 体力
+    int32 ChangeLifeCount = 110; /// 重生计数
+    int32 TotalPropPoint = 111; /// 总属性点
+    int32 IsFlashPlayer = 112; /// 新人标记
+    int32 AdmiredCount = 113; /// 被崇拜计数
+    int32 CombatForce = 114; /// 战斗力
+    int32 AdorationCount = 115; /// 崇拜计数
+    int32 DayOnlineSecond = 116; /// 每日在线时长（秒）
+    int32 SeriesLoginNum = 117; /// 连续登陆天数（1-7）
+    int32 AutoAssignPropertyPoint = 118; /// 自动分配属性点
+    int32 OnLineTotalTime = 119; /// 总在线时间
+    int32 AllZhuoYueNum = 120; /// 全套卓越属性装备个数
+    int32 VIPLevel = 121; /// VIP等级
+    int32 OpenGridTime = 122; /// 开启背包个格子计时
+    int32 OpenPortableGridTime = 123; /// 开启移动背包格子计时
+    WingData MyWingData = 124; /// 翅膀数据列表
+    map<int32, int32> PictureJudgeReferInfo = 125; /// 山海全书提交信息
+    int32 StarSoulValue = 126; /// 星魂值
+    int64 StoreYinLiang = 127; /// 仓库金币
+    int64 StoreMoney = 128; /// 仓库绑定金币
+    string PlayerRecallStartDay = 129; /// 节日活动开始日期
+    string PlayerRecallDaysNum = 130; /// 节日活动持续天数
+    TalentData MyTalentData = 131; /// 天赋数据
+    int32 TianTiRongYao = 132; /// 天梯荣耀值
+    FluorescentGemData FluorescentDiamondData = 133; /// 荧光宝石数据
+    int32 GMAuth = 134; /// 是否gm
+    SoulStoneData soulStoneData = 135; /// 魂石石数据
+    int64 SettingBitFlags = 136; /// 二态功能设置，参考ESettingBitFlag
+    int32 SpouseId = 137; /// 配偶id
+    string sSpouseName = 138; /// 配偶的名称
+    int32 nJunXianLevel = 139; /// 军衔等级
+    int32 nIsOnJiJia = 140; /// 是否骑乘机甲
+    int32 week_bhMoney = 141; /// 每周帮会资金贡献
+    repeated int32 funOpenflagList = 142; /// 功能开启提示奖励领取列表
+    repeated GoodsData MengChongsInBag = 143; /// 萌宠栏数据
+    int32 MengchongBagNum = 144; /// 当前萌宠背包的页数（总个数 - 1）
+    int32 OpenMengchongGridTime = 145; /// 萌宠背包格子开启时间
+    int32 QiRiLoginActFinished = 146; ///七日登陆活动是否完成
+    map<int32,string> MengchongNameList = 147;  ///萌宠命名列表
+     repeated TotemNetItem activatedTotemList = 148; ///当前的开启的图腾List
+}
+
+/// NPC角色的数据,主要用于九宫格移动时客户端动态创建NPC使用
+message NPCRole{
+	int32 NpcID = 1;	/// NPC的角色ID
+	int32 PosX = 2;		/// 格子X坐标
+	int32 PosY = 3;		/// 格子Y坐标
+	int32 MapCode = 4;	/// 地图编码
+	string RoleString = 5;/// NPC角色基础配置数据
+	int32 Dir = 6;		/// npc的方向
+}
+
+/// 结婚数据
+message MarriageData
+{
+    int32 nSpouseID = 1; /// 配偶的ID
+    int32 byMarrytype = 2; /// 类型 -1 = 未结婚 1 = 丈夫 2 = 妻子  // TODO... 原始数据类型为sbyte
+    int32 nRingID = 3; /// 婚戒ID
+    int32 nGoodwillexp = 4; /// 亲密度
+    int32 byGoodwillstar = 5; /// 亲密星级
+    int32 byGoodwilllevel = 6; /// 亲密阶数
+    int32 nGivenrose = 7; /// 已收玫瑰数量
+    string strLovemessage = 8; /// 爱情宣言
+    int32 byAutoReject = 9; /// 自动拒绝求婚
+}
+
+/// 结婚数据
+message MarriageData_EX
+{
+    MarriageData myMarriageData = 1; /// 结婚数据
+    string roleName = 2; /// 玩家名称
+    int32 occupationId = 3; /// 角色职业
+}
+
+/// 商城销售数据
+message MallSaleData
+{
+    string MallXmlString = 1; /// Mall.xml 字符串
+    string MallTabXmlString = 2; /// MallTab.xml 字符串
+    string QiangGouXmlString = 3; /// QiangGou.xml 字符串 => 这个xml内部最多有需要的三条数据
+}
+
+/// 向指定目标点移动的消息
+message SpriteMoveData
+{
+	int32 roleID = 1;		/// 要开始移动的角色的Id
+	int32 mapCode = 2;		/// 角色所在的关卡Id
+	int32 action = 3;		/// 角色在移动过程中的行为(跑步?走跳?)
+	int32 toX = 4;			/// 目标点坐标(服务器坐标系)
+	int32 toY = 5;			/// 目标点坐标(服务器坐标系)
+	int32 extAction = 6;	/// 寻路结束后的行为
+	int32 fromX = 7;		/// 起始坐标点(服务器坐标系)
+	int32 fromY = 8;		/// 起始坐标点(服务器坐标系)
+	int64 startMoveTicks = 9; /// 暂时没有用了,为了兼容性留着
+	string pathString = 10; /// 寻路使用的路径点
+}
+
+/// 点击NPC的消息(与NPC对话?)
+message CS_ClickOn
+{
+	int32 RoleId = 1;		/// 要与NPC对话的角色Id(应该是本地玩家的角色Id)
+	int32 MapCode = 2;		/// 本地角色所在的关卡Id
+	int32 NpcId = 3;		/// 要与之对话的NPC的角色Id
+	int32 ExtId = 4;		/// 要与之对话的NPC的数据表Id
+}
+
+/// NPC角色的数据定义
+message NPCData{
+	int32 MapCode = 1;		/// 当前的地图编号
+	int32 RoleID = 2;		/// 主角的角色ID
+	int32 NPCID = 3;		/// NPC的唯一ID
+	repeated int32 NewTaskIDs = 4;	/// 尚未接受的任务列表
+	repeated int32 OperationIDs = 5;/// 系统功能列表
+	repeated int32 ScriptIDs = 6;	/// NPC功能脚本列表
+	int32 ExtensionID = 7;			/// 扩展ID（NPC表中的模板ID）
+	repeated int32 NewTaskIDsDoneCount = 8;	/// 尚未接受的任务列表已经完成的次数
+}
+
+/// 使用道具数据
+message CS_SprUseGoods
+{
+    int32 RoleId = 1; /// 角色id
+    int32 DbId = 2; /// 物品dbId
+    int32 GoodsId = 3; /// 物品类型Id
+    int32 UseNum = 4; /// 使用个数
+}
+
+/// 角色属性数据
+message EquipPropsData
+{
+    int32 RoleID = 1;
+    double Strength = 2;
+    double Intelligence = 3;
+    double Dexterity = 4;
+    double Constitution = 5;
+    double MinAttack = 6;
+    double MaxAttack = 7;
+    double MinDefense = 8;
+    double MaxDefense = 9;
+    double MagicSkillIncrease = 10;
+    double MinMAttack = 11;
+    double MaxMAttack = 12;
+    double MinMDefense = 13;
+    double MaxMDefense = 14;
+    double PhySkillIncrease = 15;
+    double MaxHP = 16;
+    double MaxMP = 17;
+    double AttackSpeed = 18;
+    double Hit = 19;
+    double Dodge = 20;
+    int32 TotalPropPoint = 21;
+    int32 ChangeLifeCount = 22;
+    int32 CombatForce = 23;
+    int32 TEMPStrength = 24;
+    int32 TEMPIntelligsence = 25;
+    int32 TEMPDexterity = 26;
+    int32 TEMPConstitution = 27;
+}
+
+/// 通知客户端添加新物品的数据
+message AddGoodsData
+{       
+    int32 roleID = 1;			/// 道具属于的角色Id
+    int32 id = 2;				/// 数据库流水ID
+    int32 goodsID = 3;			/// 物品ID
+    int32 forgeLevel = 4;		/// 锻造级别
+    int32 quality = 5;			/// 物品的品质(某些装备会分品质，不同的品质属性不同，用户改变属性后要记录下来)
+    int32 goodsNum = 6;			/// 物品数量 
+    int32 binding = 7;			/// 是否绑定的物品(绑定的物品不可交易, 不可摆摊)
+    int32 site = 8;				/// 所在的位置(0: 包裹, 1:仓库)
+    string jewellist = 9;		/// 根据品质随机抽取的扩展属性的索引列表
+    int32 newHint = 10;
+    string newEndTime = 11;
+    int32 addPropIndex = 12;	/// 出售的银两价格
+    int32 bornIndex = 13;		/// 增加一个天生属性的百分比
+    int32 lucky = 14;			/// 装备的幸运值
+    int32 strong = 15;			/// 装备的耐久度--如果是萌宠则表示羁当前经验
+    int32 ExcellenceProperty = 16;	/// 卓越信息 -- 一个32位int32 每位代表一个卓越属性
+    int32 nAppendPropLev = 17;		/// 追加等级--如果是萌宠则表示羁绊的是哪个坐骑
+    int32 ChangeLifeLevForEquip = 18;	/// 装备的重生级别
+    int32 bagIndex = 19;			/// 根据品质随机抽取的扩展属性的索引列表
+    repeated int32 washProps = 20;	/// 装备洗炼属性 结构: 属性ID|属性值|属性ID|属性值|属性ID|属性值... 
+    repeated int32 ElementhrtsProps = 21;
+}
+
+/// 快速接受并完成任务
+message SCCompTask
+{
+    int32 roleID = 1;       /// 完成任务的角色Id,应该是本地玩家角色Id
+    int32 npcID = 2;        /// 任务对应的Npc的角色Id
+    int32 taskID = 3;       /// 任务Id
+    int32 state = 4;        /// 任务状态
+}
+
+/// 修改道具返回
+message SCModGoods
+{
+    int32 State = 1; /// 结果
+    int32 ModType = 2; /// 修改类型
+    int32 ID = 3; /// 道具DBID
+    int32 IsUsing = 4; /// 是否正在使用
+    int32 Site = 5; /// 位置（背包、仓库...）
+    int32 Count = 6; /// 个数
+    int32 BagIndex = 7; /// 所在包里位置索引
+    int32 NewHint = 8; /// 新提示
+    string sParam = 9; /// 参数
+}
+
+/// 整理背包返回
+message S2CResetBag
+{
+    repeated GoodsData GoodsDataList = 1; /// 物品数据列表
+}
+
+/// 创建怪物的消息包
+message MonsterData
+{
+    /// 当前的角色ID
+    int32 RoleID = 1;
+
+    /// 当前的角色ID
+    string RoleName = 2;
+
+    /// 当前角色的性别
+    int32 RoleSex = 3;
+
+    /// 角色级别
+    int32 Level = 4;
+
+    /// 当前的经验
+    int32 Experience = 5;
+
+    /// 当前所在的位置X坐标
+    int32 PosX = 6;
+
+    /// 当前所在的位置Y坐标
+    int32 PosY = 7;
+
+    /// 当前的方向
+    int32 RoleDirection = 8;
+
+    /// 当前的生命值
+    double LifeV = 9;
+
+    /// 当前的生命值
+    double MaxLifeV = 10;
+
+    /// 当前的魔法值
+    double MagicV = 11;
+
+    /// 当前的魔法值
+    double MaxMagicV = 12;
+
+    /// 获取或设置精灵当前衣服代码
+    int32 EquipmentBody = 13;
+
+    /// 扩展ID
+    int32 ExtensionID = 14;
+
+    /// 怪物的类型
+    int32 MonsterType = 15;
+
+    /// 怪物主人的角色ID 必须是玩家角色
+    int32 MasterRoleID = 16;
+
+    /// 宠物怪的ai类型 默认1 自由攻击 只对道士的宠物怪才有用
+    uint32 AiControlType = 17;
+
+    /// 宠物怪的ai类型 默认1 自由攻击 只对道士的宠物怪才有用
+    string AnimalSound = 18;
+
+    /// 怪物的级别
+    int32 MonsterLevel = 19;
+
+    /// 中毒开始的时间
+    int64 ZhongDuStart = 20;
+
+    /// 中毒持续的秒数
+    int32 ZhongDuSeconds = 21;
+
+    /// 昏迷开始时间
+    int64 FaintStart = 22;
+
+    /// 昏迷持续的秒数
+    int32 FaintSeconds = 23;
+
+    /// 所属阵营
+    int32 BattleWitchSide = 24;
+    
+    /// 是否播放出生动作 0 不播放  1 播放    
+    int32 PlayBirthAni = 25;
+
+    /// 掉落归属者名称
+    int32 FallBelongToRoleID = 26;
+
+    /// 掉落归属者RoleID
+    string FallBelongToName = 27;
+}
+
+/// 寻路信息, 通知他人自己开始移动
+message SpriteNotifyOtherMoveData
+{    
+    int32 roleID = 1;    
+    int32 mapCode = 2;
+    int32 action = 3;
+    int32 toX = 4;
+    int32 toY = 5;
+    int32 extAction = 6;
+    int32 fromX = 7;
+    int32 fromY = 8;
+    int64 startMoveTicks = 9;
+    string pathString = 10;
+    double moveCost = 11;
+}
+
+/// 发送给服务器的心跳消息(每分钟一次?)
+message SCClientHeart
+{
+    int32 RoleID = 1;       /// 玩家的角色Id
+    int32 RandToken = 2;    /// 此次登录的令牌
+    int32 Ticks = 3;        /// 无效字段,兼容用
+    int64 ReportCliRealTick = 4;    /// 客户端上报现实中的tick
+}
+
+//发送技能消息
+message MgiacCodeData
+{
+    int32 RoleID = 1;                   /// 玩家的角色Id
+    int32 mapCode =2;               /// 场景id
+    int32 magicCode =3;            /// 技能id
+    int32 targetRoleID =4;         /// 目标id
+}
+
+//发送同步行为
+message RoleAction
+{
+      int32 RoleID = 1;                   /// 玩家的角色Id
+      int32 mapCode =2;               /// 场景id
+      int32 direction = 3;              /// 方向id
+      int32 action = 4;                  /// 行为id
+      int32 toX = 5;                       /// 坐标
+      int32 toY= 6;                        ///坐标
+      int32 targetX= 7;                 ///目标坐标
+      int32 targetY= 8;                 ///目标坐标
+      int32 yAngel = 9;                ///yAnge
+      int32 moveToX =10;          
+      int32 moveToY = 11;
+      int32 ClientTicks = 12;
+}
+
+//精灵攻击数据
+message AttackData
+{
+    int32 roleID = 1;                        /// 玩家的角色Id
+    int32 roleX = 2;                         /// 攻击者的x
+    int32 roleY =3;                          ///攻击者的y
+    int32 enemy = 4;                       ///受攻击的id
+    int32 enemyX = 5;                   ///受攻击者的x
+    int32 enemyY = 6;                    ///受攻击者的y
+    int32 realEnemyX = 7;            ///受攻击者服务器位置x
+    int32 realEnemyY = 8;            ///受攻击者服务器位置y
+    int32 magicCode = 9;             /// 技能id
+    int64 clientTicks = 10;           /// 客户端上报现实中的tick
+}
+
+/// 精灵回血数据
+message SpriteRelifeData
+{
+    int32 roleID = 1;
+    int32 x = 2;
+    int32 y = 3;
+    int32 direction = 4;
+    double lifeV = 5;
+    double magicV = 6;
+    int32 force = 7;
+}
+
+/// 精灵攻击结果
+message SpriteAttackResultData
+{
+    int32 enemy = 1;            /// 敌人ID
+    int32 burst = 2;            /// 伤害类型
+    int32 injure = 3;           /// 伤害值
+    double enemyLife = 4;       /// 敌人生命值
+    int64 newExperience = 5;    /// 获得的经验？
+    int64 experience = 6;       /// 主角的当前经验值
+    int32 newLevel = 7;         /// 主角的新等级
+    int32 MerlinInjuer = 8;     /// 梅林伤害值
+    int32 MerlinType = 9;       /// 梅林伤害类型
+}
+
+/// 精灵伤害数据
+message SpriteInjuredData
+{
+    int32 attackerRoleID = 1;
+    int32 injuredRoleID = 2;
+    int32 burst = 3;
+    int32 injure = 4;
+    double injuredRoleLife = 5;
+    int32 attackerLevel = 6;
+    int32 injuredRoleMaxLifeV = 7;
+    int32 injuredRoleMagic = 8;
+    int32 injuredRoleMaxMagicV = 9;
+    int32 hitToGridX = 10;
+    int32 hitToGridY = 11;
+    int32 MerlinInjuer = 12; /// 梅林伤害值
+    int32 MerlinType = 13; /// 梅林伤害类型  // TODO... 原始数据类型为sbyte
+}
+
+/// 精灵受击
+message SpriteHitedData
+{
+    int32 roleId = 1;
+    int32 enemy = 2;
+    int32 enemyX = 3;
+    int32 enemyY = 4;
+    int32 magicAttackID = 5; // 改为技能招式ID
+    int32 yAngle = 6; // 目标点处释放特效时，特效的方向
+}
+
+/// 精灵招式攻击数据
+message SpriteMagicAttackData
+{
+    int32 attackerRoleID = 1;  /// 攻击者
+    int32 magicAttackID = 2;   /// 招式ID
+}
+
+/// 精灵生命变化
+message SpriteLifeChangeData
+{
+    int32 roleID = 1;        /// 角色ID
+    int32 lifeV = 2;         /// 最大血值
+    int32 magicV = 3;        /// 最大蓝值
+    int32 currentLifeV = 4;  /// 当前血值
+    int32 currentMagicV = 5; /// 当前蓝值
+    double moveSpeed = 6;    /// 加入移动速度变化时的同步
+}
+
+/// 角色加载完毕的数据
+message LoadAlreadyData
+{
+    int32 RoleID = 1;
+    int32 MapCode = 2;
+    int64 StartMoveTicks = 3;
+    int32 CurrentX = 4;
+    int32 CurrentY = 5;
+    int32 CurrentDirection = 6;
+    int32 Action = 7;
+    int32 ToX = 8;
+    int32 ToY = 9;
+    double MoveCost = 10;
+    int32 ExtAction = 11;
+    string PathString = 12;
+    int32 CurrentPathIndex = 13;
+}
+
+/// 精简的角色数据（主要用于通知角色用）
+message RoleDataMini
+{
+    int32 RoleID = 1; /// 当前的角色ID
+    string RoleName = 2; /// 当前的角色ID
+    int32 RoleSex = 3; /// 当前角色的性别
+    int32 Occupation = 4; /// 角色职业
+    int32 Level = 5; /// 角色级别
+    int32 Faction = 6; /// 角色所属的帮派
+    int32 PKMode = 7; /// 当前的PK模式
+    int32 PKValue = 8; /// 当前的PK值
+    int32 MapCode = 9; /// 所在的地图的编号
+    int32 PosX = 10; /// 当前所在的位置X坐标
+    int32 PosY = 11; /// 当前所在的位置Y坐标
+    int32 RoleDirection = 12; /// 当前的方向
+    int32 LifeV = 13; /// 当前的生命值
+    int32 MaxLifeV = 14; /// 最大的生命值
+    int32 MagicV = 15; /// 当前的魔法值
+    int32 MaxMagicV = 16; /// 最大的魔法值
+    int32 BodyCode = 17; /// 衣服代号
+    int32 WeaponCode = 18; /// 武器代号
+    string OtherName = 19; /// 称号
+    int32 TeamID = 20; /// 组队的ID
+    int32 TeamLeaderRoleID = 21; /// 当前的组队中的队长ID
+    int32 PKPoint = 22; /// 当前的PK点
+    int64 StartPurpleNameTicks = 23; /// 紫名的开始时间
+    int64 BattleNameStart = 24; /// 角斗场荣誉称号开始时间
+    int32 BattleNameIndex = 25; /// 角斗场荣誉称号
+    int32 ZoneID = 26; /// 区ID
+    string BHName = 27; /// 帮会名称
+    int32 BHVerify = 28; /// 被邀请加入帮会时是否验证
+    int32 BHZhiWu = 29; /// 帮会职务
+    int64 FSHuDunStart = 30; /// 法师的护盾开始的时间
+    int32 BattleWhichSide = 31; /// 大乱斗中的阵营ID
+    int32 IsVIP = 32; /// 上次的mailID
+    int64 DSHideStart = 33; /// 道术隐身的时间
+    repeated int32 RoleCommonUseIntPamams = 34; /// 角色常用整形参数值列表
+    int32 FSHuDunSeconds = 35; /// 法师的护盾持续的秒数
+    int64 ZhongDuStart = 36; /// 中毒开始的时间
+    int32 ZhongDuSeconds = 37; /// 中毒持续的秒数
+    int32 JieriChengHao = 38; /// 节日称号
+    int64 DongJieStart = 39; /// 冻结开始的时间
+    int32 DongJieSeconds = 40; /// 冻结持续的秒数
+    repeated GoodsData GoodsDataList = 41; /// 物品数据
+    int32 ChangeLifeLev = 42; /// 重生级别
+    int32 ChangeLifeCount = 43; /// 重生计数
+    string StallName = 44; /// 摆摊的名称
+    repeated BufferDataMini BufferMiniInfo = 45; /// Buffer Mini数据
+    WingData MyWingData = 46; /// 翅膀数据列表
+    int32 VIPLevel = 47; /// VIP等级
+    int32 GMAuth = 48; /// 是否gm
+    int64 SettingBitFlags = 49; /// 二态功能设置，参考ESettingBitFlag
+    int32 SpouseId = 50; /// 配偶id, >0 表示有
+    int32 HorseRideState = 51; /// 骑乘状态， >0 表示在骑乘中
+    int32 nIsOnJiJia = 52; /// 骑乘机甲状态， >0 表示在骑乘中
+}
+
+//同步角色位置 
+message PositionData
+{
+        int32 RoleID = 1;
+        int32 MapCode = 2;
+        int32 toX = 3;
+        int32 toY = 4;
+        int64 currentPosTicks = 5;
+}
+
+/// 怪的复活数据定义（人和怪物都使用这个数据）
+message MonsterRealiveData
+{
+    int32 RoleID = 1; /// 当前的角色ID
+    int32 PosX = 2; /// 当前的角色X坐标
+    int32 PosY = 3; /// 当前的角色Y坐标
+    int32 Direction = 4; /// 当前的角色方向
+}
+
+/// 属性加点操作
+message CSPropAddPoint
+{
+    int32 RoleID = 1;
+    int32 Strength = 2; /// 力量
+    int32 Intelligence = 3; /// 智力
+    int32 Dexterity = 4; /// 敏捷
+    int32 Constitution = 5; /// 体力
+}
+
+/// 刷新图标状态数据
+message ActivityIconStateData
+{
+    repeated uint32 arrIconState = 1; /// 前15位表示功能状态编号，后一位表示图标状态（0为不显示感叹号、1为显示） // TODO... 原始数据类型为ushort
+}
+
+/// 同步角色的动作(如释放技能,笑等)
+message SpriteActionData
+{
+    int32 roleID = 1;           /// 角色Id
+    int32 mapCode = 2;          /// 做动作时所在场景的Id
+    int32 direction = 3;        /// 做动作时面向的方向(8方向?).兼容用!
+    int32 action = 4;           /// 角色做出的动作. GActions之一
+    int32 toX = 5;              /// 角色做出动作时,客户端所在的坐标X(服务器系坐标系)
+    int32 toY = 6;              /// 角色做出动作时,客户端所在的坐标Y(服务器系坐标系)
+    int32 targetX = 7;          /// 目标坐标X(服务器系坐标系),如技能释放点
+    int32 targetY = 8;          /// 目标坐标Y(服务器系坐标系),如技能释放点
+    int32 yAngle = 9;           /// 做动作时面向的方向(360方向?).
+}
+
+/// 一次伤害相关的信息
+message SpriteAttackData
+{    
+    int32 roleID = 1;           /// 发动伤害的角色Id
+    int32 roleX = 2;            /// 角色的位置坐标X(服务器坐标系)
+    int32 roleY = 3;            /// 角色的位置坐标Y(服务器坐标系)
+    int32 enemy = 4;            /// 目标的角色Id(可以没有-1)
+    int32 enemyX = 5;           /// 目标的位置坐标X(服务器坐标系).enemy有效时才有效
+    int32 enemyY = 6;           /// 目标的位置坐标Y(服务器坐标系).enemy有效时才有效
+    int32 realEnemyX = 7;       /// 目标点位置坐标X(服务器坐标系)
+    int32 realEnemyY = 8;       /// 目标点位置坐标Y(服务器坐标系)
+    int32 magicCode = 9;        /// 使用的技能Id
+}
+
+/// 挂机(自动战斗)的信息
+message SCAutoFight
+{
+	int32 State = 1;			/// 返回客户端挂机指令的执行结果. 0 - 成功, -1 - 已经处于对应的挂机状态,忽略此指令, -2 - 其它错误	
+	int32 RoleID = 2;			/// 发出指令的角色的角色Id
+	int32 FightType = 3;		/// 自动挂机的类型.为 AutoFightCmds 之一
+	int32 Tag = 4;				/// 自动挂机相关的标识, 为 GetThingsIndexes 标识的组合
+}
+
+/// 通过服务器查找目标点周围的怪物
+message SCFindMonster
+{
+    int32 RoleID = 1;           /// 客户端的角色Id
+    int32 X = 2;                /// 目标点X(服务器坐标系)
+    int32 Y = 3;                /// 目标点Y(服务器坐标系)
+    int32 radiusGridNum = 4;    /// 查找半径(格子坐标系)
+    int32 ExcludeBoss = 5;      /// 是否排除Boss
+    repeated int32 excludeMonsterIDs = 6;   /// 需要排除的怪物角色Id
+}
+
+/// 切换地图数据
+message SCMapChange
+{
+    int32 RoleID = 1;           /// 角色ID
+    int32 TeleportID = 2;       /// 传送点ID
+    int32 NewMapCode = 3;       /// 新地图ID
+    int32 ToNewMapX = 4;        /// 新地图坐标X
+    int32 ToNewMapY = 5;        /// 新地图坐标Y
+    int32 ToNewDiection = 6;    /// 新地图角色方向
+    int32 State = 7;            /// 结果
+}
+
+/// 瞬移的数据
+message SpriteTransportToPosData
+{
+    int32 RoleID = 1;           /// 角色ID
+    int32 TeleportID = 2;       /// 传送点ID
+    int32 MapCode = 3;          /// 地图ID
+    int32 TransportToX = 4;     /// 坐标X
+    int32 TransportToY = 5;     /// 坐标Y
+    int32 ToNewDiection = 6;    /// 角色方向
+}
+
+/// 更换装备的消息数据
+message ChangeEquipData
+{
+     int32 RoleID = 1;          /// 角色ID
+     GoodsData EquipGoodsData = 2;       ///换装GoodsData
+     WingData UsingWinData = 3;          /// 翅膀数据
+     int32 nChangeType = 4;        /// 变化类型
+}
+
+/// 七日活动每个活动的每个子项的信息
+message SevenDayItemData{  
+    int32 AwardFlag = 1; ///领奖标识 1.七日登录：1 == 已领取, 否则为未领取 2.七日目标：1 == 已领取, 否则为未领取 3.七日抢购：不使用此字段 4.七日充值：1 == 已领取, 否则为未领取
+    int32 Params1 = 2; ///附加参数 1.七日登录：1 == 当天登录了，否则表示未登录 2.七日目标：表示该项已经达成的总和 3.七日抢购：该项已购买个数 4.七日充值：该项充值金额
+    int32 Params2 = 3; /// 暂时不明白干啥的
+}
+
+/// 客户端查询七日活动信息
+message SevenDayActQueryData{
+    int32 ActivityType = 1;     ///查询的那一个活动  SevenDayActivityType.xml
+    map<int32, SevenDayItemData> ItemDict = 2;      ///活动的具体信息 key：每一个活动配置文件中的id字段
+}
+
+/// 活动送礼相关数据
+message HuodongData
+{
+    string LastWeekID = 1;                  /// 登录周ID
+    string LastDayID = 2;                   /// 登录日ID
+    int32 LoginNum = 3;                     /// 周连续登录次数
+    int32 NewStep = 4;                      /// 见面有礼领取步骤
+    int64 StepTime = 5;                     /// 领取上一个见面有礼步骤的时间
+    int32 LastMTime = 6;                    /// 上个月的在线时长
+    string CurMID = 7;                      /// 本月的标记ID
+    int32 CurMTime = 8;                     /// 本月的在线时长
+    int32 SongLiID = 9;                     /// 已经领取的送礼活动ID
+    int32 LoginGiftState = 10;              /// 登录有礼的领取状态
+    int32 OnlineGiftState = 11;             /// 在线有礼的领取状态
+    int32 LastLimitTimeHuoDongID = 12;      /// 限时登录活动ID
+    int32 LastLimitTimeDayID = 13;          /// 限时登录日ID
+    int32 LimitTimeLoginNum = 14;           /// 限时登录日累计登录次数
+    int32 LimitTimeGiftState = 15;          /// 限时登录日累计领取状态
+    int32 EveryDayOnLineAwardStep = 16;     /// 每日在线奖励的领取到了第几步
+    int32 GetEveryDayOnLineAwardDayID = 17; /// 领取上一个每日在线奖励的日期
+    int32 SeriesLoginGetAwardStep = 18;     /// 连续登陆奖励领取到第几步了
+    int32 SeriesLoginAwardDayID = 19;       /// 连续登陆领取奖励的日期
+    string SeriesLoginAwardGoodsID = 20;    /// 连续登陆领取奖励的列表
+    string EveryDayOnLineAwardGoodsID = 21; /// 每日在线领取奖励的列表
+}
+
+/// 等级奖励数据
+message GradeRewardData {
+    repeated int32 flags = 1;     /// 等级奖励标识列表
+}
+
+/// 道具使用数据
+message SC_SprUseGoods {
+    int32 Error = 1; /// 使用结果
+    int32 DbId = 2; /// 道具DbId
+    int32 Cnt = 3; /// 使用个数
+}
+
+/// 二级属性数据
+message SecondaryAttributeData {
+    repeated double attrList = 1; /// 属性列表
+}
+
+///玩家已经开启的图腾单个数据定义
+message TotemNetItem{
+    int32 ToTemID = 1;/// 当前的图腾ID
+    int32 ToTemStute = 2;///当前的图腾状态（1可激活， 2已激活）
+    string sOpenTime = 3;///日志中可能会用到
+}
+/// 帮会详细数据
+message BangHuiDetailData{
+    int32 BHID = 1; ///帮派的ID
+    string BHName = 2; ///帮派的名称
+    int32 ZoneID = 3; ///区ID
+    int32 BZRoleID = 4; ///首领的ID
+    string BZRoleName = 5; ///首领的名称
+    int32 BZOccupation = 6; ///首领的职业
+    int32 TotalNum = 7; ///帮成员总的个数
+    int32 TotalLevel = 8; ///帮成员总的级别
+    string BHBulletin = 9; ///帮会公告
+    string BuildTime = 10; ///建立时间
+    string QiName = 11; ///战旗名称
+    int32 QiLevel =12; ///帮成员总的级别
+    repeated BangHuiMgrItemData MgrItemList = 13; ///管理成员列表
+    int32 IsVerify = 14; ///是否验证
+    int32 TotalMoney = 15; ///帮会资金
+    int32 TodayZhanGongForGold = 16; ///玩家今日获得帮贡值
+    int32 TodayZhanGongForDiamond = 17; ///玩家今日获得帮贡值
+    int32 JiTan = 18; ///祭坛
+    int32 JunXie = 19; ///军械
+    int32 GuangHuan = 20; ///光环
+    int32 CanModNameTimes = 21; ///剩余允许改名次数
+    string BHXuanyan = 22; ///帮会宣言
+    int32 bhLevel = 23; ///帮会等级
+    int32 TotalCombatForce = 24; ///帮会成员总战斗力
+    string sBHBuff =25; ///帮会buff
+}
+///帮会管理成员数据
+message BangHuiMgrItemData{
+    int32 ZoneID = 1; ///区ID
+    int32 RoleID = 2; ///角色的ID
+    string RoleName = 3; ///角色的名称
+    int32 Occupation = 4; ///角色的职业
+    int32 BHZhiwu = 5; ///帮中职务
+    string ChengHao = 6; ///帮中称号
+    int32 BangGong = 7; ///帮会公告
+    int32 Level = 8; ///角色的级别
+    int32 CLevel = 9; ///角色的重生级别
+    int32 CombatForce = 10; ///角色的战斗力
+    int64 LogoutTime = 11; ///角色的登出时间
+    int32 week_bhMoney = 12; ///帮会资金贡献(每周的)
+    string sPosition = 13; ///位置信息(mapID:x:y:z)
+}
+///商人兑换数据
+message BusinessDuiHuan{
+    map<int32, int32> Dict = 1; ///商人兑换数据字典
+}
+///装备副本请求数据
+message CS_QueryFuBen{
+    int32 RoleId = 1;
+    int32 MapId = 2;
+    int32 FuBenId = 3;
+}

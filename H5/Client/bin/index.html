@@ -1,0 +1,310 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset='utf-8' />
+	<title>www.congwen.com/Long</title>
+	<meta name='viewport' content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no'
+	/>
+	<meta name="renderer" content="webkit">
+	<meta name='apple-mobile-web-app-capable' content='yes' />
+	<meta name='full-screen' content='true' />
+	<meta name='x5-fullscreen' content='true' />
+	<meta name='360-fullscreen' content='true' />
+	<meta name="laya" screenorientation ="landscape"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<meta http-equiv='expires' content='0' />
+	<meta http-equiv="Cache-Control" content="no-siteapp"/>
+</head>
+
+<body>	
+	<!--核心包，封装了显示对象渲染，事件，时间管理，时间轴动画，缓动，消息交互,socket，本地存储，鼠标触摸，声音，加载，颜色滤镜，位图字体等-->
+	<script type="text/javascript" src="libs/laya.core.js"></script>
+	<!--封装了webgl渲染管线，如果使用webgl渲染，可以在初始化时调用Laya.init(1000,800,laya.webgl.WebGL);-->
+    <script type="text/javascript" src="libs/laya.webgl.js"></script>
+	<!--是动画模块，包含了swf动画，骨骼动画等-->
+    <script type="text/javascript" src="libs/laya.ani.js"></script>
+	<!--包含更多webgl滤镜，比如外发光，阴影，模糊以及更多-->
+    <script type="text/javascript" src="libs/laya.filter.js"></script>
+	<!--封装了html动态排版功能-->
+    <script type="text/javascript" src="libs/laya.html.js"></script>
+	<!--粒子类库-->
+    <script type="text/javascript" src="libs/laya.particle.js"></script>
+	<!--提供tileMap解析支持-->
+    <script type="text/javascript" src="libs/laya.tiledmap.js"></script>
+	<!--提供了制作UI的各种组件实现-->
+    <script type="text/javascript" src="libs/laya.ui.js"></script>
+	<!--提供LayaAir3D接口-->
+	<script type="text/javascript" src="libs/laya.d3.js"></script>
+	<!--提供ProtoBuf接口-->
+    <script type="text/javascript" src="libs/long.js"></script>
+	<script type="text/javascript" src="libs/protobuf.js"></script>
+	<!--寻路算法-->
+	<script type="text/javascript" src="libs/laya.pathfinding.js"></script>
+	<!--Debug面板-->
+	<script type="text/javascript" src="libs/laya.debugtool.js"></script>	
+
+	<!--用户自定义顺序文件添加到这里-->
+	<!--jsfile--Custom-->
+	<!--第三方库代码的功能扩展-->
+	<script type="text/javascript" src="libs/third_code_patcher.js"></script>
+
+	<!--游戏配置文件-->
+	<script src="js/config.js"></script>
+	<script src="js/ui/layaUI.max.all.js"></script>
+	<script src="js/Loca/ConfigLoca.js"></script>
+	<script type="text/javascript" src="libs/netmessage.js"></script>
+	<script src="js/Global/GlobalEnum.js"></script>
+	<script src="js/Global/WindowEnum.js"></script>
+	<script src="js/Global/Log.js"></script>
+	<script src="js/Global/Utils.js"></script>
+	<script src="js/Base/ResourceObject.js"></script>
+	<script src="js/Global/Version.js"></script>
+	<script src="js/Base/MyEvent.js"></script>
+	<script type="text/javascript">
+		// ------ 定义一些全局变量,方便后面访问 -------
+		// 在这里使用NetMsg来引用各种消息体,以便让后面的代码写的更省事.
+		NetMsg = protobuf.roots.NetMsg;
+		Long = dcodeIO.Long;
+	</script>
+
+	<!--jsfile--Custom-->
+	<!--自定义的js(src文件夹下)文件自动添加到下面jsfile模块标签里面里-->
+	<!--删除标签，ide不会自动添加js文件，请谨慎操作-->
+	<!--jsfile--startTag-->
+	<script src="js/ThirdLibs/itay-events/Event.js"></script>
+	<script src="js/ThirdLibs/FluentBehaviorTree/Error/Errors.js"></script>
+	<script src="js/ThirdLibs/FluentBehaviorTree/BehaviorTreeStatus.js"></script>
+	<script src="js/ThirdLibs/FluentBehaviorTree/BehaviorTreeBuilder.js"></script>
+	<script src="js/ThirdLibs/ECS/EntitiesSearchCache.js"></script>
+	<script src="js/ThirdLibs/ECS/EntitiesFilter.js"></script>
+	<script src="js/ThirdLibs/ECS/ComponentsHash.js"></script>
+	<script src="js/ThirdLibs/ECS/ComponentsCollection.js"></script>
+	<script src="js/ThirdLibs/ECS/ComponentClass.js"></script>
+	<script src="js/Test/SetUpPuGong3DuanTime.js"></script>
+	<script src="js/Test/gmCommand.js"></script>
+	<script src="js/Net/Socket4Message.js"></script>
+	<script src="js/Net/SendMessages.js"></script>
+	<script src="js/Net/NetCommands.js"></script>
+	<script src="js/MyUI/UIObject.js"></script>
+	<script src="js/MyUI/ToTemManager.js"></script>
+	<script src="js/MyUI/Totem/ToTemNet.js"></script>
+	<script src="js/MyUI/Totem/ABS_TotemData.js"></script>
+	<script src="js/MyUI/Tip/GTipServiceEx.js"></script>
+	<script src="js/MyUI/Systemwizard/SystemWizardManager.js"></script>
+	<script src="js/MyUI/Systemwizard/SystemWizardEnum.js"></script>
+	<script src="js/MyUI/SystemHelpMgr.js"></script>
+	<script src="js/MyUI/StyleUtils.js"></script>
+	<script src="js/MyUI/Prompt/PromptEnum.js"></script>
+	<script src="js/MyUI/Prompt/PromptData.js"></script>
+	<script src="js/MyUI/LogicTask/RichangTaskPart.js"></script>
+	<script src="js/MyUI/GongnengYugaoMgr.js"></script>
+	<script src="js/MyUI/FunctionOpen/FunctionOpenManager.js"></script>
+	<script src="js/MyUI/EquipFuBen/Data/EquipFuBenServerData.js"></script>
+	<script src="js/MyUI/Components/GoodsBox.js"></script>
+	<script src="js/MyUI/AtlasManager.js"></script>
+	<script src="js/MyUI/ActivityTipManager.js"></script>
+	<script src="js/Logic/Managers/ParticlesManager.js"></script>
+	<script src="js/Logic/Level/StoryBoard.js"></script>
+	<script src="js/Logic/Level/MapGrid.js"></script>
+	<script src="js/Logic/Level/LevelInput.js"></script>
+	<script src="js/Logic/Level/Level.js"></script>
+	<script src="js/Logic/Level/GMapData.js"></script>
+	<script src="js/Logic/KuaFu/KuaFuLoginManager.js"></script>
+	<script src="js/Logic/Actors/LocalPlayerInput.js"></script>
+	<script src="js/Logic/Actors/EquipView.js"></script>
+	<script src="js/Logic/Actors/ControllerStateId.js"></script>
+	<script src="js/Logic/Actors/ActorUtils.js"></script>
+	<script src="js/Logic/Actors/ActorState.js"></script>
+	<script src="js/Global/UIHelper.js"></script>
+	<script src="js/Global/TaskUtils.js"></script>
+	<script src="js/Global/SystemConfig.js"></script>
+	<script src="js/Global/Super.js"></script>
+	<script src="js/Global/StdErrorCode.js"></script>
+	<script src="js/Global/NationHelper.js"></script>
+	<script src="js/Global/GroupProgress.js"></script>
+	<script src="js/Global/GlobalSkillFunction.js"></script>
+	<script src="js/Global/GlobalRoleFunction.js"></script>
+	<script src="js/Global/GlobalPath.js"></script>
+	<script src="js/Global/GlobalMapFunction.js"></script>
+	<script src="js/Global/GlobalGoodsFunction.js"></script>
+	<script src="js/Global/GlobalFunctions.js"></script>
+	<script src="js/Global/GlobalBufferFunction.js"></script>
+	<script src="js/Global/Global.js"></script>
+	<script src="js/Global/D3Utils.js"></script>
+	<script src="js/GameMode/PlayingMode_NetMsg.js"></script>
+	<script src="js/GameMode/EventBus.js"></script>
+	<script src="js/DebugTools/BTDebug.js"></script>
+	<script src="js/DataTable/DataTableUtils.js"></script>
+	<script src="js/DataTable/DataTableRowTypes.js"></script>
+	<script src="js/Data/TaskData.js"></script>
+	<script src="js/Data/SuperData.js"></script>
+	<script src="js/Data/LocalAutoFightData.js"></script>
+	<script src="js/Data/GData.js"></script>
+	<script src="js/Base/TimeManager.js"></script>
+	<script src="js/Base/IPreloadResource.js"></script>
+	<script src="js/Base/CoroutineWrapper.js"></script>
+	<script src="js/DataTable/DataTableManager.js"></script>
+	<script src="js/DataTable/DataTableObject.js"></script>
+	<script src="js/DataTable/ExtPropIndexs.js"></script>
+	<script src="js/DataTable/GoodsTable.js"></script>
+	<script src="js/DataTable/LanguageTable.js"></script>
+	<script src="js/DataTable/SystemParamsTable.js"></script>
+	<script src="js/DataTable/SystemTasks.js"></script>
+	<script src="js/DataTable/TaskZhangJie.js"></script>
+	<script src="js/DebugTools/ShowMonsterID.js"></script>
+	<script src="js/GameMode/ModeBase.js"></script>
+	<script src="js/GameMode/CreatorMode.js"></script>
+	<script src="js/GameMode/ModeManager.js"></script>
+	<script src="js/GameMode/GameInstance.js"></script>
+	<script src="js/GameMode/LoadingMode.js"></script>
+	<script src="js/GameMode/LoginMode.js"></script>
+	<script src="js/GameMode/LogoMode.js"></script>
+	<script src="js/GameMode/PlayingMode.js"></script>
+	<script src="js/GameMode/SelectorMode.js"></script>
+	<script src="js/Global/GlobalClass.js"></script>
+	<script src="js/Global/MathUtils.js"></script>
+	<script src="js/Logic/Actors/AController.js"></script>
+	<script src="js/Logic/Actors/AAIController.js"></script>
+	<script src="js/ThirdLibs/ECS/Entity.js"></script>
+	<script src="js/Logic/Actors/Actor.js"></script>
+	<script src="js/Logic/Actors/Actor3DBase.js"></script>
+	<script src="js/Logic/Actors/Actor3DRole.js"></script>
+	<script src="js/Logic/Actors/ActorShow.js"></script>
+	<script src="js/Logic/Actors/ActorWithView.js"></script>
+	<script src="js/Logic/Actors/Character.js"></script>
+	<script src="js/Logic/Actors/CharacterContoller.js"></script>
+	<script src="js/Logic/Actors/CharacterFsmStates.js"></script>
+	<script src="js/Logic/Actors/CharacterView.js"></script>
+	<script src="js/Logic/Actors/LocalPlayerController.js"></script>
+	<script src="js/Logic/Actors/Monster.js"></script>
+	<script src="js/Logic/Actors/MonsterController.js"></script>
+	<script src="js/Logic/Actors/NPC.js"></script>
+	<script src="js/Logic/Actors/Player.js"></script>
+	<script src="js/Logic/Actors/PlayerController.js"></script>
+	<script src="js/ThirdLibs/FluentBehaviorTree/Node/BehaviorTreeNodeInterface.js"></script>
+	<script src="js/ThirdLibs/FluentBehaviorTree/Node/ActionNode.js"></script>
+	<script src="js/ThirdLibs/FluentBehaviorTree/StateData.js"></script>
+	<script src="js/Logic/Actors/PlayerFsmStates.js"></script>
+	<script src="js/Logic/Actors/RPGCamera.js"></script>
+	<script src="js/Logic/Actors/Teleport.js"></script>
+	<script src="js/Logic/Components/ActionEventComponent.js"></script>
+	<script src="js/Logic/Components/ActionPlayComponent.js"></script>
+	<script src="js/Logic/Components/CameraMoveScript.js"></script>
+	<script src="js/Logic/Components/DebugShowAxisComponent.js"></script>
+	<script src="js/Logic/Components/ParticleAutoReturnPool.js"></script>
+	<script src="js/Logic/Components/TaskDecoration.js"></script>
+	<script src="js/Logic/Components/UIFollowTargetManager.js"></script>
+	<script src="js/MyUI/Activity/ActivityItemRender.js"></script>
+	<script src="js/MyUI/Activity/ActivityPart.js"></script>
+	<script src="js/MyUI/Base/BaseWindow.js"></script>
+	<script src="js/MyUI/Activity/ActivityWindow.js"></script>
+	<script src="js/MyUI/Base/IWindowPart.js"></script>
+	<script src="js/MyUI/Business/BusinessGoodsBox.js"></script>
+	<script src="js/MyUI/Business/BusinessPart.js"></script>
+	<script src="js/MyUI/Business/Commponents/BusinessGoodsRender.js"></script>
+	<script src="js/MyUI/Components/GoodsIcon.js"></script>
+	<script src="js/MyUI/Components/HuoBiItem.js"></script>
+	<script src="js/MyUI/Components/MapPoint.js"></script>
+	<script src="js/MyUI/Components/RedDot.js"></script>
+	<script src="js/MyUI/Components/TabItemRender.js"></script>
+	<script src="js/MyUI/DamageHud/DamageHudManager.js"></script>
+	<script src="js/MyUI/DamageHud/HurtShow.js"></script>
+	<script src="js/MyUI/EquipFuBen/Commponents/EquipFuBenDifficultyItem.js"></script>
+	<script src="js/MyUI/EquipFuBen/Commponents/EquipFuBenItemRender.js"></script>
+	<script src="js/MyUI/EquipFuBen/EquipFuBenInfoBox.js"></script>
+	<script src="js/MyUI/EquipFuBen/EquipFuBenListBox.js"></script>
+	<script src="js/MyUI/EquipFuBen/EquipFuBenPart.js"></script>
+	<script src="js/MyUI/FirstCharge/FirstChargePart.js"></script>
+	<script src="js/MyUI/Forge/ForgeWindow.js"></script>
+	<script src="js/MyUI/FunOpenTiShi/FunOpenTiShiPart.js"></script>
+	<script src="js/MyUI/LoadingView.js"></script>
+	<script src="js/MyUI/LogicTask/Components/TaskBoxMiniTotem.js"></script>
+	<script src="js/MyUI/LogicTask/NPCDialogPart.js"></script>
+	<script src="js/MyUI/LogicTask/NPCDoingTaskPart.js"></script>
+	<script src="js/MyUI/LogicTask/TaskBoxMini.js"></script>
+	<script src="js/MyUI/Login/LoginView.js"></script>
+	<script src="js/MyUI/Login/RoleCreatorItem.js"></script>
+	<script src="js/MyUI/Login/RoleCreatorView.js"></script>
+	<script src="js/MyUI/Login/RoleSelectorItem.js"></script>
+	<script src="js/MyUI/Login/RoleSelectorView.js"></script>
+	<script src="js/MyUI/Main/MainFunOpenTiShi.js"></script>
+	<script src="js/MyUI/Main/MainSkillIcon.js"></script>
+	<script src="js/MyUI/Main/MainView.js"></script>
+	<script src="js/MyUI/Main/MeditationUI.js"></script>
+	<script src="js/MyUI/Main/MonsterHeadPart.js"></script>
+	<script src="js/MyUI/Main/ObjectRoleFacePart.js"></script>
+	<script src="js/MyUI/Main/RadarMap.js"></script>
+	<script src="js/MyUI/Main/RockerView.js"></script>
+	<script src="js/MyUI/Main/RoleHeadInfo.js"></script>
+	<script src="js/MyUI/Mall/Commponents/MallBuyLimitGoodsRender.js"></script>
+	<script src="js/MyUI/Mall/Commponents/MallGoodsRender.js"></script>
+	<script src="js/MyUI/Mall/MallGoodsPart.js"></script>
+	<script src="js/MyUI/Mall/MallPart.js"></script>
+	<script src="js/MyUI/Mall/MallWindow.js"></script>
+	<script src="js/MyUI/MapUI/MapWindow.js"></script>
+	<script src="js/MyUI/MapUI/WorldMapPiece.js"></script>
+	<script src="js/MyUI/Prompt/PromptBox.js"></script>
+	<script src="js/MyUI/Role/AttributePointWindow.js"></script>
+	<script src="js/MyUI/Role/EquipPart.js"></script>
+	<script src="js/MyUI/Role/ParcelPart.js"></script>
+	<script src="js/MyUI/Role/PropertyWindow.js"></script>
+	<script src="js/MyUI/Role/RolePart.js"></script>
+	<script src="js/MyUI/Role/RoleWindow.js"></script>
+	<script src="js/MyUI/Role/SkillItem.js"></script>
+	<script src="js/MyUI/Role/SkillPart.js"></script>
+	<script src="js/MyUI/SystemOpenFly/SystemOpenFlyPart.js"></script>
+	<script src="js/MyUI/Systemwizard/SystemWizardItem.js"></script>
+	<script src="js/MyUI/Tip/EquipTip.js"></script>
+	<script src="js/MyUI/Tip/GoodsTip.js"></script>
+	<script src="js/MyUI/Totem/Components/TotemIconRender.js"></script>
+	<script src="js/MyUI/Totem/TotemInfoBox.js"></script>
+	<script src="js/MyUI/Totem/TotemPart.js"></script>
+	<script src="js/MyUI/Totem/TotemWindow.js"></script>
+	<script src="js/MyUI/UIManager.js"></script>
+	<script src="js/MyUI/UIUtils.js"></script>
+	<script src="js/MyUI/Vip/VipItem.js"></script>
+	<script src="js/MyUI/Vip/VipPart.js"></script>
+	<script src="js/MyUI/Vip/VipQuanXianItem.js"></script>
+	<script src="js/MyUI/Welfare/ChargeWelfarePart.js"></script>
+	<script src="js/MyUI/Welfare/Components/ChargeWelfareItemBox.js"></script>
+	<script src="js/MyUI/Welfare/Components/ChargeWelfareRender.js"></script>
+	<script src="js/MyUI/Welfare/Components/GradeItemRender.js"></script>
+	<script src="js/MyUI/Welfare/Components/OnlineItemRender.js"></script>
+	<script src="js/MyUI/Welfare/Components/SevenDayLoginRewardItem.js"></script>
+	<script src="js/MyUI/Welfare/DailyWelfarePart.js"></script>
+	<script src="js/MyUI/Welfare/GradeRewardPart.js"></script>
+	<script src="js/MyUI/Welfare/MeditationPart.js"></script>
+	<script src="js/MyUI/Welfare/OnlineRewardPart.js"></script>
+	<script src="js/MyUI/Welfare/SevenDayLoginPart.js"></script>
+	<script src="js/MyUI/Welfare/WelfareWindow.js"></script>
+	<script src="js/MyUI/WindowManager.js"></script>
+	<script src="js/Test/autoTask.js"></script>
+	<script src="js/Test/KeyListenController.js"></script>
+	<script src="js/Test/RobotTestingMode.js"></script>
+	<script src="js/ThirdLibs/ECS/Component.js"></script>
+	<script src="js/ThirdLibs/ECS/EntitiesObservation.js"></script>
+	<script src="js/ThirdLibs/ECS/EntitiesCollection.js"></script>
+	<script src="js/ThirdLibs/FluentBehaviorTree/Error/BehaviorTreeError.js"></script>
+	<script src="js/ThirdLibs/FluentBehaviorTree/Node/ParentBehaviorTreeNodeInterface.js"></script>
+	<script src="js/ThirdLibs/FluentBehaviorTree/Node/CooldownNode.js"></script>
+	<script src="js/ThirdLibs/FluentBehaviorTree/Node/ForceSuccessNode.js"></script>
+	<script src="js/ThirdLibs/FluentBehaviorTree/Node/InverterNode.js"></script>
+	<script src="js/ThirdLibs/FluentBehaviorTree/Node/LoopNode.js"></script>
+	<script src="js/ThirdLibs/FluentBehaviorTree/Node/ParallelNode.js"></script>
+	<script src="js/ThirdLibs/FluentBehaviorTree/Node/RootNode.js"></script>
+	<script src="js/ThirdLibs/FluentBehaviorTree/Node/SelectorNode.js"></script>
+	<script src="js/ThirdLibs/FluentBehaviorTree/Node/SequenceNode.js"></script>
+	<script src="js/ThirdLibs/FluentBehaviorTree/Node/WaitNode.js"></script>
+	<script src="js/ThirdLibs/itay-events/Interfaces.js"></script>
+	<script src="js/ThirdLibs/itay-events/Event1.js"></script>
+	<script src="js/ThirdLibs/itay-events/Event2.js"></script>
+	<!--jsfile--endTag-->
+
+	<!--启动类添加到这里-->
+	<!--jsfile--Main-->
+	<script src="js/MainGame.js"></script>
+	<!--jsfile--Main-->
+</body>
+
+</html>

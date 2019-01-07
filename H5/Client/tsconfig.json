@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",    
+    "sourceMap": true,
+    "target": "es6",
+    // "target": "es5",
+    // "lib":["es2015"],      // 添加 "es2015" 是为了在es5标准上支持 async/await 语法
+    "traceResolution":true,
+    "rootDir": "src",
+    "outDir": "bin/js"
+  },
+  "paths":{
+    "NetMsg":["libs/netmessage.d.ts"]    
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}

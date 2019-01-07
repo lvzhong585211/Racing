@@ -1,0 +1,1 @@
+{"version":3,"file":"EntitiesObservation.js","sourceRoot":"","sources":["../../../../src/ThirdLibs/ECS/EntitiesObservation.ts"],"names":[],"mappings":"AAAA,IAAU,GAAG,CAeZ;AAfD,WAAU,GAAG;IAUZ,MAAa,mBAAmB;QAAhC;YACQ,UAAK,GAAsC,cAAc,CAAC,CAAC;YAE3D,WAAM,GAAmB,IAAA,cAAc,CAAC,OAAO,EAAE,CAAC;QAC1D,CAAC;KAAA;IAJY,uBAAmB,sBAI/B,CAAA;AACF,CAAC,EAfS,GAAG,KAAH,GAAG,QAeZ"}
