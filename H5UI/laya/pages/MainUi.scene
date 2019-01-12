@@ -2,11 +2,11 @@
     "x":0,
     "type":"Scene",
     "selectedBox":2,
-    "selecteID":3,
+    "selecteID":6,
     "searchKey":"Scene",
     "props":{"width":720,"sceneColor":"#666666","height":1280},
     "nodeParent":-1,
-    "maxID":31,
+    "maxID":32,
     "label":"Scene",
     "isOpen":true,
     "isDirectory":true,
@@ -33,7 +33,7 @@
             "x":15,
             "type":"Image",
             "searchKey":"Image,MapGroup",
-            "props":{"y":65,"x":101,"width":518,"skin":"comp/img_bg.png","sizeGrid":"30,10,10,10","name":"MapGroup","height":232},
+            "props":{"y":37,"x":18,"width":684,"skin":"comp/image/guanka.png","sizeGrid":"0","name":"MapGroup","height":307},
             "nodeParent":2,
             "label":"MapGroup",
             "isOpen":true,
@@ -46,7 +46,7 @@
                     "x":30,
                     "type":"Text",
                     "searchKey":"Text,GuanKaNum",
-                    "props":{"y":37,"x":216,"text":"* 第四关*","stroke":0,"name":"GuanKaNum","fontSize":20,"font":"Microsoft YaHei","color":"#7d7d7d","bold":true},
+                    "props":{"y":39,"x":261,"text":" ·第4关·","stroke":0,"name":"GuanKaNum","fontSize":48,"font":"Microsoft YaHei","color":"#ffffaf","bold":false,"align":"center"},
                     "nodeParent":4,
                     "label":"GuanKaNum",
                     "isDirectory":false,
@@ -60,7 +60,7 @@
                     "x":30,
                     "type":"Text",
                     "searchKey":"Text,MapName",
-                    "props":{"y":63,"x":179,"text":"开罗","strokeColor":"#000000","stroke":5,"name":"MapName","fontSize":80,"font":"Microsoft YaHei","color":"#ffffff","bold":true},
+                    "props":{"y":70,"x":223,"width":240,"valign":"middle","text":"开罗","strokeColor":"#95540e","stroke":5,"name":"MapName","height":110,"fontSize":120,"font":"Microsoft YaHei","color":"#f7f9c1","bold":false,"align":"center"},
                     "nodeParent":4,
                     "label":"MapName",
                     "isDirectory":false,
@@ -74,7 +74,7 @@
                     "x":30,
                     "type":"Text",
                     "searchKey":"Text,GoldNum",
-                    "props":{"y":197,"x":25,"width":180,"text":"转得$250","stroke":2,"name":"GoldNum","height":30,"fontSize":20,"font":"Microsoft YaHei","color":"#ffffff","bold":true,"align":"left"},
+                    "props":{"y":212,"x":56,"width":220,"text":"赚得$250","strokeColor":"#95540e","stroke":3,"name":"GoldNum","height":43,"fontSize":30,"font":"Microsoft YaHei","color":"#f7f9c1","bold":false,"align":"left"},
                     "nodeParent":4,
                     "label":"GoldNum",
                     "isDirectory":false,
@@ -88,13 +88,13 @@
                     "x":30,
                     "type":"Text",
                     "searchKey":"Text,CarNum",
-                    "props":{"y":197,"x":296.724609375,"width":197,"text":"停好10辆车","stroke":2,"name":"CarNum","height":30,"fontSize":20,"font":"Microsoft YaHei","color":"#ffffff","bold":true,"align":"right"},
+                    "props":{"y":212,"x":409,"width":220,"text":"停好10辆车","strokeColor":"#95540e","stroke":3,"name":"CarNum","height":43,"fontSize":30,"font":"Microsoft YaHei","color":"#f7f9c1","bold":false,"align":"right"},
                     "nodeParent":4,
                     "label":"CarNum",
                     "isDirectory":false,
                     "isAniNode":true,
                     "hasChild":false,
-                    "compId":8,
+                    "compId":31,
                     "child":[
                         ]
                 }]
@@ -103,7 +103,7 @@
             "x":15,
             "type":"Image",
             "searchKey":"Image",
-            "props":{"y":1092,"x":0,"width":720,"skin":"comp/hscroll.png","height":188},
+            "props":{"y":1179,"x":39,"width":641,"skin":"comp/image/guanggao.jpg","height":101},
             "nodeParent":2,
             "label":"Image",
             "isOpen":true,
@@ -116,7 +116,7 @@
                     "x":30,
                     "type":"Button",
                     "searchKey":"Button",
-                    "props":{"y":-73,"x":74,"width":121,"skin":"comp/clip_selectBox.png","height":108},
+                    "props":{"y":-131,"x":27,"width":120,"stateNum":"2","skin":"comp/image/Buttom_01.png","height":120},
                     "nodeParent":9,
                     "label":"Button",
                     "isDirectory":false,
@@ -130,7 +130,7 @@
                     "x":30,
                     "type":"Button",
                     "searchKey":"Button",
-                    "props":{"y":-73,"x":239,"width":257,"skin":"comp/clip_selectBox.png","height":108},
+                    "props":{"y":-144,"x":182,"width":277,"stateNum":"2","skin":"comp/image/Buttom_01.png","sizeGrid":"47,80,72,76","labelStrokeColor":"#f88b89","labelStroke":2,"labelSize":50,"labelPadding":"-10","labelFont":"Microsoft YaHei","labelColors":"#ffffff","labelBold":true,"labelAlign":"center","label":"开始游戏","height":145},
                     "nodeParent":9,
                     "label":"Button",
                     "isDirectory":false,
@@ -144,7 +144,7 @@
                     "x":30,
                     "type":"Button",
                     "searchKey":"Button",
-                    "props":{"y":-73,"x":537,"width":121,"skin":"comp/clip_selectBox.png","height":108},
+                    "props":{"y":-131.5,"x":495,"width":120,"stateNum":"2","skin":"comp/image/Buttom_01.png","height":120},
                     "nodeParent":9,
                     "label":"Button",
                     "isDirectory":false,
@@ -154,20 +154,6 @@
                     "child":[
                         ]
                 }]
-        },
-        {
-            "x":15,
-            "type":"Text",
-            "searchKey":"Text",
-            "props":{"y":674,"x":178,"width":363,"text":"点击开始","strokeColor":"#fd9997","stroke":4,"height":40,"fontSize":40,"font":"Microsoft YaHei","color":"#fdfdfd","bold":true,"align":"center"},
-            "nodeParent":2,
-            "label":"Text",
-            "isDirectory":false,
-            "isAniNode":true,
-            "hasChild":false,
-            "compId":13,
-            "child":[
-                ]
         },
         {
             "x":15,
@@ -281,7 +267,7 @@
                                 ]
                         }]
                 }],
-            "$HIDDEN":false
+            "$HIDDEN":true
         }],
     "animations":[
         {
