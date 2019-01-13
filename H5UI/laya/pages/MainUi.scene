@@ -2,11 +2,11 @@
     "x":0,
     "type":"Scene",
     "selectedBox":2,
-    "selecteID":6,
+    "selecteID":35,
     "searchKey":"Scene",
-    "props":{"width":720,"sceneColor":"#666666","height":1280},
+    "props":{"width":720,"sceneColor":"#000000","height":1280},
     "nodeParent":-1,
-    "maxID":32,
+    "maxID":45,
     "label":"Scene",
     "isOpen":true,
     "isDirectory":true,
@@ -18,121 +18,163 @@
             "x":15,
             "type":"Sprite",
             "searchKey":"Sprite,Bank",
-            "props":{"y":0,"x":0,"width":720,"texture":"comp/blank.png","name":"Bank","height":1280,"alpha":0.1},
+            "props":{"y":0,"x":0,"width":720,"texture":"comp/image/微信图片_2019011000280416.jpg","name":"Bank","height":1280,"alpha":1},
             "nodeParent":2,
             "label":"Bank",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "compId":34,
+            "child":[
+                ],
+            "$LOCKED":true,
+            "$HIDDEN":false
+        },
+        {
+            "x":15,
+            "type":"Sprite",
+            "searchKey":"Sprite,Bank",
+            "props":{"y":0,"x":0,"width":720,"texture":"comp/image/Back2.png","name":"Bank","height":1280,"alpha":0.3},
+            "nodeParent":2,
+            "label":"Bank",
+            "isOpen":true,
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
             "compId":3,
             "child":[
                 ],
-            "$LOCKED":true
+            "$LOCKED":true,
+            "$HIDDEN":false
         },
         {
             "x":15,
             "type":"Image",
-            "searchKey":"Image,MapGroup",
-            "props":{"y":37,"x":18,"width":684,"skin":"comp/image/guanka.png","sizeGrid":"0","name":"MapGroup","height":307},
+            "searchKey":"Image,GuangGao",
+            "props":{"y":1179,"x":39,"width":641,"skin":"comp/image/guanggao.jpg","name":"GuangGao","height":101},
             "nodeParent":2,
-            "label":"MapGroup",
+            "label":"GuangGao",
             "isOpen":true,
-            "isDirectory":true,
+            "isDirectory":false,
             "isAniNode":true,
-            "hasChild":true,
-            "compId":4,
-            "child":[
-                {
-                    "x":30,
-                    "type":"Text",
-                    "searchKey":"Text,GuanKaNum",
-                    "props":{"y":39,"x":261,"text":" ·第4关·","stroke":0,"name":"GuanKaNum","fontSize":48,"font":"Microsoft YaHei","color":"#ffffaf","bold":false,"align":"center"},
-                    "nodeParent":4,
-                    "label":"GuanKaNum",
-                    "isDirectory":false,
-                    "isAniNode":true,
-                    "hasChild":false,
-                    "compId":5,
-                    "child":[
-                        ]
-                },
-                {
-                    "x":30,
-                    "type":"Text",
-                    "searchKey":"Text,MapName",
-                    "props":{"y":70,"x":223,"width":240,"valign":"middle","text":"开罗","strokeColor":"#95540e","stroke":5,"name":"MapName","height":110,"fontSize":120,"font":"Microsoft YaHei","color":"#f7f9c1","bold":false,"align":"center"},
-                    "nodeParent":4,
-                    "label":"MapName",
-                    "isDirectory":false,
-                    "isAniNode":true,
-                    "hasChild":false,
-                    "compId":6,
-                    "child":[
-                        ]
-                },
-                {
-                    "x":30,
-                    "type":"Text",
-                    "searchKey":"Text,GoldNum",
-                    "props":{"y":212,"x":56,"width":220,"text":"赚得$250","strokeColor":"#95540e","stroke":3,"name":"GoldNum","height":43,"fontSize":30,"font":"Microsoft YaHei","color":"#f7f9c1","bold":false,"align":"left"},
-                    "nodeParent":4,
-                    "label":"GoldNum",
-                    "isDirectory":false,
-                    "isAniNode":true,
-                    "hasChild":false,
-                    "compId":7,
-                    "child":[
-                        ]
-                },
-                {
-                    "x":30,
-                    "type":"Text",
-                    "searchKey":"Text,CarNum",
-                    "props":{"y":212,"x":409,"width":220,"text":"停好10辆车","strokeColor":"#95540e","stroke":3,"name":"CarNum","height":43,"fontSize":30,"font":"Microsoft YaHei","color":"#f7f9c1","bold":false,"align":"right"},
-                    "nodeParent":4,
-                    "label":"CarNum",
-                    "isDirectory":false,
-                    "isAniNode":true,
-                    "hasChild":false,
-                    "compId":31,
-                    "child":[
-                        ]
-                }]
-        },
-        {
-            "x":15,
-            "type":"Image",
-            "searchKey":"Image",
-            "props":{"y":1179,"x":39,"width":641,"skin":"comp/image/guanggao.jpg","height":101},
-            "nodeParent":2,
-            "label":"Image",
-            "isOpen":true,
-            "isDirectory":true,
-            "isAniNode":true,
-            "hasChild":true,
+            "hasChild":false,
             "compId":9,
             "child":[
+                ],
+            "$HIDDEN":false
+        },
+        {
+            "x":15,
+            "type":"Sprite",
+            "searchKey":"Sprite,Main",
+            "props":{"y":37,"x":18,"name":"Main"},
+            "nodeParent":2,
+            "label":"Main",
+            "isOpen":false,
+            "isDirectory":true,
+            "isAniNode":true,
+            "hasChild":true,
+            "compId":35,
+            "child":[
                 {
-                    "x":30,
-                    "type":"Button",
-                    "searchKey":"Button",
-                    "props":{"y":-131,"x":27,"width":120,"stateNum":"2","skin":"comp/image/Buttom_01.png","height":120},
-                    "nodeParent":9,
-                    "label":"Button",
-                    "isDirectory":false,
+                    "type":"Image",
+                    "searchKey":"Image,MapGroup",
+                    "props":{"width":684,"skin":"comp/image/guanka.png","sizeGrid":"0","name":"MapGroup","height":307},
+                    "nodeParent":35,
+                    "label":"MapGroup",
+                    "isOpen":false,
+                    "isDirectory":true,
                     "isAniNode":true,
-                    "hasChild":false,
-                    "compId":10,
+                    "hasChild":true,
+                    "compId":4,
                     "child":[
-                        ]
+                        {
+                            "type":"Text",
+                            "searchKey":"Text,GuanKaNum",
+                            "props":{"y":39,"x":261,"text":" ·第4关·","stroke":0,"name":"GuanKaNum","fontSize":48,"font":"Microsoft YaHei","color":"#ffffaf","bold":false,"align":"center"},
+                            "nodeParent":4,
+                            "label":"GuanKaNum",
+                            "isDirectory":false,
+                            "isAniNode":true,
+                            "hasChild":false,
+                            "compId":5,
+                            "child":[
+                                ]
+                        },
+                        {
+                            "type":"Text",
+                            "searchKey":"Text,MapName",
+                            "props":{"y":70,"x":223,"width":240,"valign":"middle","text":"开罗","strokeColor":"#95540e","stroke":5,"name":"MapName","height":110,"fontSize":120,"font":"Microsoft YaHei","color":"#f7f9c1","bold":false,"align":"center"},
+                            "nodeParent":4,
+                            "label":"MapName",
+                            "isDirectory":false,
+                            "isAniNode":true,
+                            "hasChild":false,
+                            "compId":6,
+                            "child":[
+                                ]
+                        },
+                        {
+                            "type":"Text",
+                            "searchKey":"Text,GoldNum",
+                            "props":{"y":212,"x":56,"width":220,"text":"赚得$250","strokeColor":"#95540e","stroke":3,"name":"GoldNum","height":43,"fontSize":30,"font":"Microsoft YaHei","color":"#f7f9c1","bold":false,"align":"left"},
+                            "nodeParent":4,
+                            "label":"GoldNum",
+                            "isDirectory":false,
+                            "isAniNode":true,
+                            "hasChild":false,
+                            "compId":7,
+                            "child":[
+                                ]
+                        },
+                        {
+                            "type":"Text",
+                            "searchKey":"Text,CarNum",
+                            "props":{"y":212,"x":409,"width":220,"text":"停好10辆车","strokeColor":"#95540e","stroke":3,"name":"CarNum","height":43,"fontSize":30,"font":"Microsoft YaHei","color":"#f7f9c1","bold":false,"align":"right"},
+                            "nodeParent":4,
+                            "label":"CarNum",
+                            "isDirectory":false,
+                            "isAniNode":true,
+                            "hasChild":false,
+                            "compId":31,
+                            "child":[
+                                ]
+                        }],
+                    "$HIDDEN":false
                 },
                 {
-                    "x":30,
                     "type":"Button",
                     "searchKey":"Button",
-                    "props":{"y":-144,"x":182,"width":277,"stateNum":"2","skin":"comp/image/Buttom_01.png","sizeGrid":"47,80,72,76","labelStrokeColor":"#f88b89","labelStroke":2,"labelSize":50,"labelPadding":"-10","labelFont":"Microsoft YaHei","labelColors":"#ffffff","labelBold":true,"labelAlign":"center","label":"开始游戏","height":145},
-                    "nodeParent":9,
+                    "props":{"y":1011,"x":48,"width":120,"stateNum":"2","skin":"comp/image/Buttom_01.png","height":120},
+                    "nodeParent":35,
                     "label":"Button",
+                    "isOpen":false,
+                    "isDirectory":true,
+                    "isAniNode":true,
+                    "hasChild":true,
+                    "compId":10,
+                    "child":[
+                        {
+                            "type":"Image",
+                            "searchKey":"Image",
+                            "props":{"y":20.5,"x":13.5,"width":93,"skin":"comp/image/shengyin.png","height":79},
+                            "nodeParent":10,
+                            "label":"Image",
+                            "isDirectory":false,
+                            "isAniNode":true,
+                            "hasChild":false,
+                            "compId":33,
+                            "child":[
+                                ]
+                        }]
+                },
+                {
+                    "type":"Button",
+                    "searchKey":"Button",
+                    "props":{"y":998,"x":203,"width":277,"stateNum":"2","skin":"comp/image/Buttom_01.png","sizeGrid":"47,80,72,76","labelStrokeColor":"#f88b89","labelStroke":2,"labelSize":50,"labelPadding":"-10","labelFont":"Microsoft YaHei","labelColors":"#ffffff","labelBold":true,"labelAlign":"center","label":"开始游戏","height":145},
+                    "nodeParent":35,
+                    "label":"Button",
+                    "isOpen":true,
                     "isDirectory":false,
                     "isAniNode":true,
                     "hasChild":false,
@@ -141,133 +183,159 @@
                         ]
                 },
                 {
-                    "x":30,
                     "type":"Button",
                     "searchKey":"Button",
-                    "props":{"y":-131.5,"x":495,"width":120,"stateNum":"2","skin":"comp/image/Buttom_01.png","height":120},
-                    "nodeParent":9,
+                    "props":{"y":1011,"x":516,"width":120,"stateNum":"2","skin":"comp/image/Buttom_01.png","height":120},
+                    "nodeParent":35,
                     "label":"Button",
-                    "isDirectory":false,
-                    "isAniNode":true,
-                    "hasChild":false,
-                    "compId":12,
-                    "child":[
-                        ]
-                }]
-        },
-        {
-            "x":15,
-            "type":"Sprite",
-            "searchKey":"Sprite,seting",
-            "props":{"y":0,"x":0,"width":720,"texture":"comp/blank.png","name":"seting","height":1280},
-            "nodeParent":2,
-            "label":"seting",
-            "isOpen":true,
-            "isDirectory":true,
-            "isAniNode":true,
-            "hasChild":true,
-            "compId":30,
-            "child":[
-                {
-                    "x":30,
-                    "type":"Image",
-                    "searchKey":"Image,Image",
-                    "props":{"y":457,"x":101,"width":518,"skin":"comp/img_bg.png","sizeGrid":"30,10,10,10","name":"Image","height":365},
-                    "nodeParent":30,
-                    "label":"Image",
-                    "isOpen":true,
+                    "isOpen":false,
                     "isDirectory":true,
                     "isAniNode":true,
                     "hasChild":true,
-                    "compId":18,
+                    "compId":12,
                     "child":[
                         {
-                            "x":45,
-                            "type":"Text",
-                            "searchKey":"Text,sound",
-                            "props":{"y":139,"x":79,"width":180,"text":"声音","stroke":3,"name":"sound","height":46,"fontSize":30,"font":"Microsoft YaHei","color":"#ffffff","bold":true,"align":"left"},
-                            "nodeParent":18,
-                            "label":"sound",
+                            "type":"Image",
+                            "searchKey":"Image",
+                            "props":{"y":17.5,"x":11,"width":98,"skin":"comp/image/cheku.png","height":83},
+                            "nodeParent":12,
+                            "label":"Image",
                             "isDirectory":false,
                             "isAniNode":true,
                             "hasChild":false,
-                            "compId":21,
-                            "child":[
-                                ]
-                        },
-                        {
-                            "x":45,
-                            "type":"Text",
-                            "searchKey":"Text,zhendong",
-                            "props":{"y":219,"x":79,"width":197,"text":"震动","stroke":3,"name":"zhendong","height":54,"fontSize":30,"font":"Microsoft YaHei","color":"#ffffff","bold":true,"align":"left"},
-                            "nodeParent":18,
-                            "label":"zhendong",
-                            "isDirectory":false,
-                            "isAniNode":true,
-                            "hasChild":false,
-                            "compId":22,
-                            "child":[
-                                ]
-                        },
-                        {
-                            "x":45,
-                            "type":"Text",
-                            "searchKey":"Text,sound",
-                            "props":{"y":50,"x":169,"width":180,"text":"设置","stroke":3,"name":"sound","height":51,"fontSize":30,"font":"Microsoft YaHei","color":"#ffffff","bold":true,"align":"center"},
-                            "nodeParent":18,
-                            "label":"sound",
-                            "isDirectory":false,
-                            "isAniNode":true,
-                            "hasChild":false,
-                            "compId":25,
-                            "child":[
-                                ]
-                        },
-                        {
-                            "x":45,
-                            "type":"Button",
-                            "searchKey":"Button,close",
-                            "props":{"y":2,"x":486,"skin":"comp/btn_close.png","name":"close"},
-                            "nodeParent":18,
-                            "label":"close",
-                            "isOpen":false,
-                            "isDirectory":false,
-                            "isAniNode":true,
-                            "hasChild":false,
-                            "compId":23,
-                            "child":[
-                                ]
-                        },
-                        {
-                            "x":45,
-                            "type":"Radio",
-                            "searchKey":"Radio",
-                            "props":{"y":148,"x":393,"skin":"comp/radio.png"},
-                            "nodeParent":18,
-                            "label":"Radio",
-                            "isDirectory":false,
-                            "isAniNode":true,
-                            "hasChild":false,
-                            "compId":28,
-                            "child":[
-                                ]
-                        },
-                        {
-                            "x":45,
-                            "type":"Radio",
-                            "searchKey":"Radio",
-                            "props":{"y":232,"x":393,"skin":"comp/radio.png"},
-                            "nodeParent":18,
-                            "label":"Radio",
-                            "isDirectory":false,
-                            "isAniNode":true,
-                            "hasChild":false,
-                            "compId":29,
+                            "compId":32,
                             "child":[
                                 ]
                         }]
                 }],
-            "$HIDDEN":true
+            "$HIDDEN":false
+        },
+        {
+            "x":15,
+            "type":"Sprite",
+            "searchKey":"Sprite,GameUI",
+            "props":{"y":26.5,"x":28,"name":"GameUI"},
+            "nodeParent":2,
+            "label":"GameUI",
+            "isOpen":false,
+            "isDirectory":true,
+            "isAniNode":true,
+            "hasChild":true,
+            "compId":40,
+            "child":[
+                {
+                    "x":30,
+                    "type":"Sprite",
+                    "searchKey":"Sprite",
+                    "props":{"y":4.5,"width":63,"texture":"comp/image/CheLiangShu.png","height":53},
+                    "nodeParent":40,
+                    "label":"Sprite",
+                    "isOpen":true,
+                    "isDirectory":true,
+                    "isAniNode":true,
+                    "hasChild":true,
+                    "compId":37,
+                    "child":[
+                        {
+                            "x":45,
+                            "type":"Image",
+                            "searchKey":"Image",
+                            "props":{"y":246,"x":627,"width":200,"skin":"comp/image/JinDuTiao2.png","sizeGrid":"0,36,0,36","rotation":-90,"height":24},
+                            "nodeParent":37,
+                            "label":"Image",
+                            "isOpen":false,
+                            "isDirectory":true,
+                            "isAniNode":true,
+                            "hasChild":true,
+                            "compId":42,
+                            "child":[
+                                {
+                                    "type":"Sprite",
+                                    "searchKey":"Sprite",
+                                    "props":{"y":0,"x":0,"width":165,"texture":"comp/hscroll.png","renderType":"mask","height":24},
+                                    "nodeParent":42,
+                                    "label":"Sprite",
+                                    "isDirectory":false,
+                                    "isAniNode":true,
+                                    "hasChild":false,
+                                    "compId":43,
+                                    "child":[
+                                        ]
+                                }]
+                        },
+                        {
+                            "x":45,
+                            "type":"Image",
+                            "searchKey":"Image",
+                            "props":{"y":246,"x":627,"width":200,"skin":"comp/image/JinDuTiao1.png","sizeGrid":"0,93,0,76","rotation":-90,"height":24},
+                            "nodeParent":37,
+                            "label":"Image",
+                            "isOpen":true,
+                            "isDirectory":false,
+                            "isAniNode":true,
+                            "hasChild":false,
+                            "compId":41,
+                            "child":[
+                                ]
+                        },
+                        {
+                            "x":45,
+                            "type":"Image",
+                            "searchKey":"Image",
+                            "props":{"y":246,"x":627,"width":200,"skin":"comp/image/JinDuTiao1.png","sizeGrid":"0,93,0,76","rotation":-90,"height":24},
+                            "nodeParent":37,
+                            "label":"Image",
+                            "isOpen":true,
+                            "isDirectory":false,
+                            "isAniNode":true,
+                            "hasChild":false,
+                            "compId":44,
+                            "child":[
+                                ]
+                        }]
+                },
+                {
+                    "x":30,
+                    "type":"Text",
+                    "searchKey":"Text,PlayerCarNum",
+                    "props":{"y":4.5,"x":77,"width":220,"text":"4","strokeColor":"#ff9c4c","stroke":3,"name":"PlayerCarNum","height":64,"fontSize":40,"font":"Microsoft YaHei","color":"#f9f9f9","bold":false,"align":"left"},
+                    "nodeParent":40,
+                    "label":"PlayerCarNum",
+                    "isDirectory":false,
+                    "isAniNode":true,
+                    "hasChild":false,
+                    "compId":36,
+                    "child":[
+                        ]
+                },
+                {
+                    "x":30,
+                    "type":"Sprite",
+                    "searchKey":"Sprite",
+                    "props":{"y":-0.5,"x":506,"width":75,"texture":"comp/image/JinBiShu.png","height":64},
+                    "nodeParent":40,
+                    "label":"Sprite",
+                    "isDirectory":false,
+                    "isAniNode":true,
+                    "hasChild":false,
+                    "compId":38,
+                    "child":[
+                        ]
+                },
+                {
+                    "x":30,
+                    "type":"Text",
+                    "searchKey":"Text,PlayerCarNum",
+                    "props":{"y":4.5,"x":564,"width":220,"text":"200","strokeColor":"#ff9c4c","stroke":3,"name":"PlayerCarNum","height":64,"fontSize":40,"font":"Microsoft YaHei","color":"#f9f9f9","bold":false,"align":"left"},
+                    "nodeParent":40,
+                    "label":"PlayerCarNum",
+                    "isDirectory":false,
+                    "isAniNode":true,
+                    "hasChild":false,
+                    "compId":39,
+                    "child":[
+                        ]
+                }]
         }],
     "animations":[
         {
