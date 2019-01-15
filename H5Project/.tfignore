@@ -1,0 +1,114 @@
+﻿################################################################################
+# 此 .tfignore 文件由 Microsoft(R) Visual Studio 自动创建。
+#
+# 此文件中与 filespecs 匹配的本地项将不会添加到版本
+# 控制中。可签入此文件以便与其他人共享排除内容。
+#
+# 通配符为 * 和 ?。模式以递归方式匹配，除非
+# 该模式使用了 \ 字符作为前缀。
+#
+# 你可以在模式前面放置路径以使其更加明确。如果添加路径，
+# 则在路径部分不允许使用通配符。
+#
+# 行首的 # 字符指示该行是一条注释。
+#
+# ! 前缀将使模式无效。在某个项由树中更高级别
+# 的 .tfignore 文件或团队项目集合的全局排除列表排除之后，
+# 可以使用此前缀来重新包括该项。
+#
+# / 字符在 Windows 平台上被解释为 \ 字符。
+#
+# 示例:
+#
+#  # 排除 Alpha\Beta 及其所有子文件夹中以 .txt 结尾的所有文件。
+#  Alpha\Beta\*.txt
+#
+#  # 仅排除此文件夹中以 .cpp 结尾的所有文件。
+#  \*.cpp
+#
+#  # 排除此文件夹及其所有子文件夹中以 .cpp 结尾的所有文件。
+#  *.cpp
+#
+#  # 如果“Contoso”是文件夹，则排除 Contoso 及其所有子项。
+#  # 如果它是文件，则仅排除此文件夹中的“Contoso”。
+#  \Contoso
+#
+#  # 如果 Help.exe 已由更高级别的 .tfignore 文件或团队项目
+#  # 集合的全局排除列表排除，则此模式仅在此文件夹
+#  # 中重新包括它。
+#  !\Help.exe    
+#
+################################################################################
+
+\Client\Library
+\Client\AssetBundles
+\Client\Temp
+\Tools\MakeAssets\Library
+\Client\Client.csproj
+\Client\Client.Editor.csproj
+\Client\Client.Editor.Plugins.csproj
+\Client\Client.Plugins.csproj
+\Client\Client.sln
+\Client\InvalidAssetNamesWhenImport.txt
+\Client
+\Client\Assets
+\Client\InvalidAssetLogs
+\Tools\Readme.md
+\Tools\MakeAssets\Assembly-CSharp.csproj
+\Tools\MakeAssets\MakeAssets.csproj
+\Tools\MakeAssets\MakeAssets.Editor.csproj
+\Tools\MakeAssets\MakeAssets.rar
+\Tools\MakeAssets\MakeAssets.sln
+\策划组\04_数值设计\数据表\ShenLongDaLu.spp
+\策划组\04_数值设计\数据表\TreasureBox.xml
+\Client\Assets\StreamingAssets\Windows
+\Client\Assets\StreamingAssets\Windows.meta
+\Client\Assembly-CSharp.csproj
+\Client\Assembly-CSharp-Editor.csproj
+\Client\Assembly-CSharp-Editor-firstpass.csproj
+\Client\Assembly-CSharp-firstpass.csproj
+\Client\Assembly-CSharp.csproj
+\Client\Assembly-CSharp-Editor.csproj
+\Client\Assembly-CSharp-Editor-firstpass.csproj
+\Client\Assembly-CSharp-firstpass.csproj
+\Client\Assembly-UnityScript.unityproj
+\Client\Assembly-UnityScript-firstpass.unityproj
+\Tools\UnityProjectForLayaExport\Assets\WebPlayerTemplates
+\Tools\UnityProjectForLayaExport\Library
+\Tools\UnityProjectForLayaExport\Temp
+\Tools\UnityProjectForLayaExport\UnityProjectForLayaExport.csproj
+\Tools\UnityProjectForLayaExport\UnityProjectForLayaExport.sln
+\Tools\unitypackages
+\Tools\ExportAssets
+\Client\Assets\AssetsToBundle\NetImages\GameRes\Images\Skill
+\Tools\EngineUpdate\.laya\chrome
+\Tools\UnityProjectForLayaExport\Assets\ArtAssets\meshnew.meta
+\Tools\UnityProjectForLayaExport\Assets\ArtAssets\Texturesnew.meta
+\Tools\UnityProjectForLayaExport\Assets\ArtAssets\Effect\water.meta
+\Tools\UnityProjectForLayaExport\Assets\ArtAssets\Effect\water\Effect.meta
+\Tools\UnityProjectForLayaExport\Assets\ArtAssets\Effect\water\Effect\[Resources].meta
+\Tools\UnityProjectForLayaExport\Assets\ArtAssets\Effect\water\Effect\[Resources]\Scripts.meta
+\Tools\UnityProjectForLayaExport\Assets\ArtAssets\mesh\M.meta
+\Tools\UnityProjectForLayaExport\Assets\ArtAssets\mesh\M\FX.meta
+\Tools\UnityProjectForLayaExport\Assets\ArtAssets\meshnew\zhucheng.meta
+\Tools\UnityProjectForLayaExport\Assets\ArtAssets\meshnew\zhucheng\baijian.meta
+\Tools\UnityProjectForLayaExport\Assets\ArtAssets\meshnew\zhucheng\cunluo.meta
+\Tools\UnityProjectForLayaExport\Assets\ArtAssets\meshnew\zhucheng\huayuan.meta
+\Tools\UnityProjectForLayaExport\Assets\ArtAssets\meshnew\zhucheng\Materials.meta
+\Tools\UnityProjectForLayaExport\Assets\ArtAssets\meshnew\zhucheng\pofangzi.meta
+\Tools\UnityProjectForLayaExport\Assets\ArtAssets\meshnew\zhucheng\shilu.meta
+\Tools\UnityProjectForLayaExport\Assets\ArtAssets\meshnew\zhucheng\zhanchang.meta
+\Tools\UnityProjectForLayaExport\Assets\ArtAssets\meshnew\zhucheng\zhibei.meta
+\Tools\UnityProjectForLayaExport\Assets\ArtAssets\meshnew\zhucheng\zhunlin.meta
+\Tools\UnityProjectForLayaExport\Assets\ArtAssets\meshnew\zhucheng\baijian\Materials.meta
+\Tools\UnityProjectForLayaExport\Assets\ArtAssets\meshnew\zhucheng\cunluo\Materials.meta
+\Tools\UnityProjectForLayaExport\Assets\ArtAssets\meshnew\zhucheng\pofangzi\Materials.meta
+\Tools\UnityProjectForLayaExport\Assets\ArtAssets\meshnew\zhucheng\zhanchang\Materials.meta
+\Tools\UnityProjectForLayaExport\Assets\ArtAssets\meshnew\zhucheng\zhibei\Materials.meta
+\Tools\UnityProjectForLayaExport\Assets\ArtAssets\Texturesnew\dibiao.meta
+\Tools\UnityProjectForLayaExport\Assets\ArtAssets\Texturesnew\zhucheng.meta
+\Tools\UnityProjectForLayaExport\Assets\AssetsToBundle\AudioItem.meta
+\Tools\UnityProjectForLayaExport\Assets\AssetsToBundle\AudioMixer.meta
+\Tools\UnityProjectForLayaExport\Assets\AssetsToBundle\AudioOriginal.meta
+\Tools\UnityProjectForLayaExport\Assets\AssetsToBundle\Map\1_PT_ZhuCheng_01.meta
+\Tools\H5ClientEngineGit\.git
