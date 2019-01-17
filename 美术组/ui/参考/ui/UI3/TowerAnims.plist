@@ -1,0 +1,76 @@
+<?xml version="1.0" ?>
+<DataAnimSet>
+
+	<!-- Line Laser   -->
+	<OEAnimDefinition Name="LL_ShootW" StartRegion="42" EndRegion="45" FrameDuration="0.05" PlaybackType="PingPong" ResetOnFinish="1" LoopCount="1" >
+		<OEAnimEventDefinition Type="0" TriggerRegion="44" />
+	</OEAnimDefinition>
+	<OEAnimDefinition Name="LL_ShootS" StartRegion="46" EndRegion="49" FrameDuration="0.05" PlaybackType="PingPong" ResetOnFinish="1" LoopCount="1" >
+		<OEAnimEventDefinition Type="0" TriggerRegion="48" />
+	</OEAnimDefinition>
+	<OEAnimDefinition Name="LL_ShootE" StartRegion="50" EndRegion="53" FrameDuration="0.05" PlaybackType="PingPong" ResetOnFinish="1" LoopCount="1" >
+		<OEAnimEventDefinition Type="0" TriggerRegion="52" />
+	</OEAnimDefinition>
+	<OEAnimDefinition Name="LL_ShootN" StartRegion="54" EndRegion="57" FrameDuration="0.05" PlaybackType="PingPong" ResetOnFinish="1" LoopCount="1" >
+		<OEAnimEventDefinition Type="0" TriggerRegion="56" />
+	</OEAnimDefinition>
+	
+	<OEAnimDefinition Name="LL_ShootWMax" StartRegion="112" EndRegion="115" FrameDuration="0.05" PlaybackType="PingPong" ResetOnFinish="1" LoopCount="1" >
+		<OEAnimEventDefinition Type="0" TriggerRegion="114" />
+	</OEAnimDefinition>
+	<OEAnimDefinition Name="LL_ShootSMax" StartRegion="116" EndRegion="119" FrameDuration="0.05" PlaybackType="PingPong" ResetOnFinish="1" LoopCount="1" >
+		<OEAnimEventDefinition Type="0" TriggerRegion="118" />
+	</OEAnimDefinition>
+	<OEAnimDefinition Name="LL_ShootEMax" StartRegion="120" EndRegion="123" FrameDuration="0.05" PlaybackType="PingPong" ResetOnFinish="1" LoopCount="1" >
+		<OEAnimEventDefinition Type="0" TriggerRegion="122" />
+	</OEAnimDefinition>
+	<OEAnimDefinition Name="LL_ShootNMax" StartRegion="124" EndRegion="127" FrameDuration="0.05" PlaybackType="PingPong" ResetOnFinish="1" LoopCount="1" >
+		<OEAnimEventDefinition Type="0" TriggerRegion="126" />
+	</OEAnimDefinition>
+	
+	<!-- Beam Laser   -->
+	<OEAnimDefinition Name="BM_Active" StartRegion="10" EndRegion="15" FrameDuration="0.05" PlaybackType="PingPong" LoopCount="-1" />
+	<OEAnimDefinition Name="BM_Shoot" StartRegion="16" EndRegion="26" FrameDuration="0.05" PlaybackType="PingPong" ResetOnFinish="1" LoopCount="1" >
+		<OEAnimEventDefinition Type="0" TriggerRegion="25" AllowMultipleTrigger="0" />
+	</OEAnimDefinition>
+	<OEAnimDefinition Name="BM_ActiveMax" StartRegion="30" EndRegion="35" FrameDuration="0.05" PlaybackType="PingPong" LoopCount="-1" />
+	<OEAnimDefinition Name="BM_ShootMax" StartRegion="36" EndRegion="46" FrameDuration="0.05" PlaybackType="PingPong" ResetOnFinish="1" LoopCount="1" >
+		<OEAnimEventDefinition Type="0" TriggerRegion="45" AllowMultipleTrigger="0" />
+	</OEAnimDefinition>
+	
+	<!-- Radar   -->
+	<OEAnimDefinition Name="RAD_Active" StartRegion="10" EndRegion="41" FrameDuration="0.075" PlaybackType="PingPong" LoopCount="-1" />
+	<OEAnimDefinition Name="RAD_Normal" StartRegion="42" EndRegion="47" FrameDuration="0.075" PlaybackType="PingPong" LoopCount="-1" />
+	<OEAnimDefinition Name="RAD_Max" StartRegion="48" EndRegion="55" FrameDuration="0.075" PlaybackType="Normal" LoopCount="-1" />
+	
+	<!-- Anti Air   -->
+	<OEAnimDefinition Name="AA_Shoot" StartRegion="10" EndRegion="25" TotalDuration="0.5" PlaybackType="Normal" ResetOnFinish="1" LoopCount="1" >
+		<OEAnimEventDefinition Type="0" TriggerRegion="23" />
+	</OEAnimDefinition>
+	
+	<!-- Bomb   -->
+	<OEAnimDefinition Name="BOM_Shoot" StartRegion="10" EndRegion="25" FrameDuration="0.08" PlaybackType="Normal" LoopCount="1" >
+		<OEAnimEventDefinition Type="0" TriggerRegion="17" />
+	</OEAnimDefinition>
+	
+	<!-- Booster   -->
+	<OEAnimDefinition Name="BST_Active" StartRegion="10" EndRegion="17" FrameDuration="0.075" PlaybackType="Normal" LoopCount="-1" />
+	<OEAnimDefinition Name="BST_ActiveMax" StartRegion="50" EndRegion="57" FrameDuration="0.075" PlaybackType="Normal" LoopCount="-1" />
+
+    <!-- Slow   -->
+	<OEAnimDefinition Name="SLO_Active" StartRegion="10" EndRegion="13" FrameDuration="0.05" PlaybackType="Normal" LoopCount="-1" />
+	<OEAnimDefinition Name="SLO_Shoot" StartRegion="14" EndRegion="29" FrameDuration="0.07" PlaybackType="Normal" ResetOnFinish="1" LoopCount="1" >
+        <OEAnimEventDefinition Type="0" TriggerRegion="25" />
+    </OEAnimDefinition>
+	
+	<OEAnimDefinition Name="SLO_ActiveMax" StartRegion="50" EndRegion="53" FrameDuration="0.05" PlaybackType="Normal" LoopCount="-1" />
+	<OEAnimDefinition Name="SLO_ShootMax" StartRegion="54" EndRegion="69" FrameDuration="0.07" PlaybackType="Normal" ResetOnFinish="1" LoopCount="1" >
+        <OEAnimEventDefinition Type="0" TriggerRegion="65" />
+    </OEAnimDefinition>
+
+    <!-- Colossus   -->
+	<OEAnimDefinition Name="COL_Active" StartRegion="74" EndRegion="78" FrameDuration="0.05" PlaybackType="PingPong" LoopCount="-1" />
+	<OEAnimDefinition Name="COL_Charge" StartRegion="80" EndRegion="94" FrameDuration="0.15" PlaybackType="Normal" ResetOnFinish="0" LoopCount="1" />
+    <OEAnimDefinition Name="COL_ChargeFront" StartRegion="95" EndRegion="109" FrameDuration="0.15" PlaybackType="Normal" ResetOnFinish="0" LoopCount="1" />
+
+</DataAnimSet>

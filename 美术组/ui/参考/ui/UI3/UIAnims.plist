@@ -1,0 +1,969 @@
+<?xml version="1.0" ?>
+<DataObjectAnimSet>
+
+    <!-- InGame -->
+    <OEObjectAnim name="Transition_MainMenuToLevelSelect" loopCount="0" playbackType="Normal">
+        <layer index="0">
+            <state tweenTime="0.0">
+                <position>0,0</position>
+                <scale>0.3,0.3</scale>
+            </state>
+            <state tweenTime="1" tweenType="EaseInOut">
+                <position>0,-120</position>
+                <scale>0.9,0.9</scale>
+            </state>
+        </layer>
+    </OEObjectAnim>
+
+    <OEObjectAnim name="Transition_LevelSelectToMainMenu" loopCount="0" playbackType="Normal">
+        <layer index="0">
+            <state tweenTime="0.0">
+                <position>0,-120</position>
+                <scale>0.9,0.9</scale>
+            </state>
+            <state tweenTime="1" tweenType="EaseInOut">
+                <position>0,0</position>
+                <scale>0.3,0.3</scale>
+            </state>
+        </layer>
+    </OEObjectAnim>
+
+    <OEObjectAnim name="Transition_LevelSelectToScreen" loopCount="0" playbackType="Normal">
+        <layer index="0">
+            <state tweenTime="0.0">
+                <position>0,-120</position>
+                <scale>0.9,0.9</scale>
+            </state>
+            <state tweenTime="1" tweenType="EaseInOut">
+                <position>-250,0</position>
+                <scale>0.5,0.5</scale>
+            </state>
+        </layer>
+    </OEObjectAnim>
+
+    <OEObjectAnim name="Transition_ScreenToLevelSelect" loopCount="0" playbackType="Normal">
+        <layer index="0">
+            <state tweenTime="0.0">
+                <position>-250,0</position>
+                <scale>0.5,0.5</scale>
+            </state>
+            <state tweenTime="1" tweenType="EaseInOut">
+                <position>0,-120</position>
+                <scale>0.9,0.9</scale>
+            </state>
+        </layer>
+    </OEObjectAnim>
+
+    <OEObjectAnim name="Glow_SlowRotate" loopCount="-1" playbackType="Normal">
+        <layer index="0">
+            <state tweenTime="0.0">
+                <rotation>0</rotation>
+            </state>
+            <state tweenTime="200" tweenType="Linear">
+                <rotation>6.28318531f</rotation>
+            </state>
+        </layer>
+    </OEObjectAnim>
+
+    <OEObjectAnim name="Glow_SlowRotate2" loopCount="-1" playbackType="Normal">
+        <layer index="0">
+            <state tweenTime="0.0">
+                <rotation>0</rotation>
+            </state>
+            <state tweenTime="200" tweenType="Linear">
+                <rotation>-6.28318531f</rotation>
+            </state>
+        </layer>
+    </OEObjectAnim>
+
+    <OEObjectAnim name="Planet_SlowRotate" loopCount="-1" playbackType="Normal">
+        <layer index="0">
+            <state tweenTime="0.0">
+                <rotation>0</rotation>
+            </state>
+            <state tweenTime="200" tweenType="Linear">
+                <rotation>6.28318531f</rotation>
+            </state>
+        </layer>
+    </OEObjectAnim>
+
+    <OEObjectAnim name="Planet_Hide" loopCount="0" playbackType="Normal">
+        <layer index="0">
+            <state tweenTime="0.0">
+                <alpha>1.0</alpha>
+            </state>
+            <state tweenTime="0.5" tweenType="EaseInOut">
+                <alpha>0.0</alpha>
+            </state>
+        </layer>
+    </OEObjectAnim>
+
+    <OEObjectAnim name="Planet_Show" loopCount="0" playbackType="Normal">
+        <layer index="0">
+            <state tweenTime="0.0">
+                <alpha>0.0</alpha>
+            </state>
+            <state tweenTime="0.5" tweenType="EaseInOut">
+                <alpha>1.0</alpha>
+            </state>
+        </layer>
+    </OEObjectAnim>
+    
+    <OEObjectAnim name="Planet_Lighten" loopCount="0" playbackType="Normal">
+        <layer index="0">
+            <state tweenTime="0.0">
+                <color>0.25,0.125,0.125,1</color>
+            </state>
+            <state tweenTime="0.5" tweenType="EaseInOut">
+                <color>1,1,1,1</color>
+            </state>
+        </layer>
+    </OEObjectAnim>
+
+    <OEObjectAnim name="Planet_Darken" loopCount="0" playbackType="Normal">
+        <layer index="0">
+            <state tweenTime="0.0">
+                <color>1,1,1,1</color>
+            </state>
+            <state tweenTime="0.5" tweenType="EaseInOut">
+                <color>0.25,0.125,0.125,1</color>
+            </state>
+        </layer>
+    </OEObjectAnim>
+    
+    <OEObjectAnim name="GUI_FadeOut" loopCount="0" playbackType="Normal">
+        <layer index="0">
+            <state tweenTime="0.0">
+                <alpha>1.0</alpha>
+            </state>
+            <state tweenTime="0.5" tweenType="EaseInOut">
+                <alpha>0.0</alpha>
+            </state>
+        </layer>
+    </OEObjectAnim>
+
+    <OEObjectAnim name="GUI_FadeIn" loopCount="0" playbackType="Normal">
+        <layer index="0">
+            <state tweenTime="0.0">
+                <alpha>0.0</alpha>
+            </state>
+            <state tweenTime="0.5" tweenType="EaseInOut">
+                <alpha>1.0</alpha>
+            </state>
+        </layer>
+    </OEObjectAnim>
+    
+    <OEObjectAnim name="GUI_FadeOutToRight" loopCount="0" playbackType="Normal">
+        <layer index="0">
+            <state tweenTime="0.0">
+                <position>0,0</position>
+                <alpha>1.0</alpha>
+            </state>
+            <state tweenTime="0.5" tweenType="EaseInOut">
+                <position>64,0</position>
+                <alpha>0.0</alpha>
+            </state>
+        </layer>
+    </OEObjectAnim>
+
+    <OEObjectAnim name="GUI_FadeInFromRight" loopCount="0" playbackType="Normal">
+        <layer index="0">
+            <state tweenTime="0.0">
+                <position>64,0</position>
+                <alpha>0.0</alpha>
+            </state>
+            <state tweenTime="0.5" tweenType="EaseInOut">
+                <position>0,0</position>
+                <alpha>1.0</alpha>
+            </state>
+        </layer>
+    </OEObjectAnim>
+    
+    <OEObjectAnim name="GUI_FadeOutToLeft" loopCount="0" playbackType="Normal">
+        <layer index="0">
+            <state tweenTime="0.0">
+                <position>0,0</position>
+                <alpha>1.0</alpha>
+            </state>
+            <state tweenTime="0.5" tweenType="EaseInOut">
+                <position>-64,0</position>
+                <alpha>0.0</alpha>
+            </state>
+        </layer>
+    </OEObjectAnim>
+
+    <OEObjectAnim name="GUI_FadeInFromLeft" loopCount="0" playbackType="Normal">
+        <layer index="0">
+            <state tweenTime="0.0">
+                <position>-64,0</position>
+                <alpha>0.0</alpha>
+            </state>
+            <state tweenTime="0.5" tweenType="EaseInOut">
+                <position>0,0</position>
+                <alpha>1.0</alpha>
+            </state>
+        </layer>
+    </OEObjectAnim>
+
+    <OEObjectAnim name="GUI_SlideInfoOutRight" loopCount="0" playbackType="Normal">
+        <layer index="0">
+            <state tweenTime="0.0">
+                <position>0,0</position>
+                <alpha>1.0</alpha>
+            </state>
+            <state tweenTime="0.25" tweenType="EaseInOut">
+                <position>240,0</position>
+                <alpha>0.0</alpha>
+            </state>
+        </layer>
+    </OEObjectAnim>
+
+    <OEObjectAnim name="GUI_SlideInfoInRight" loopCount="0" playbackType="Normal">
+        <layer index="0">
+            <state tweenTime="0.0">
+                <position>240,0</position>
+                <alpha>0.0</alpha>
+            </state>
+            <state tweenTime="0.25" tweenType="EaseInOut">
+                <position>0,0</position>
+                <alpha>1.0</alpha>
+            </state>
+        </layer>
+    </OEObjectAnim>
+
+    <OEObjectAnim name="GUI_FadeInFromBottom" loopCount="0" playbackType="Normal">
+        <layer index="0">
+            <state tweenTime="0.0">
+                <position>0,-50</position>
+                <alpha>0.0</alpha>
+            </state>
+            <state tweenTime="0.25" tweenType="EaseInOut">
+                <position>0,0</position>
+                <alpha>1.0</alpha>
+            </state>
+        </layer>
+    </OEObjectAnim>
+
+    <OEObjectAnim name="GUI_FadeOutToBottom" loopCount="0" playbackType="Normal">
+        <layer index="0">
+            <state tweenTime="0.0">
+                <position>0,0</position>
+                <alpha>1.0</alpha>
+            </state>
+            <state tweenTime="0.25" tweenType="EaseInOut">
+                <position>0,-50</position>
+                <alpha>0.0</alpha>
+            </state>
+        </layer>
+    </OEObjectAnim>
+
+    <OEObjectAnim name="ING_FadeInFromTop" loopCount="0" playbackType="Normal">
+        <layer index="0">
+            <state tweenTime="0.0">
+                <position>0,96</position>
+                <alpha>0.0</alpha>
+            </state>
+            <state tweenTime="0.25" tweenType="EaseInOut">
+                <position>0,0</position>
+                <alpha>1.0</alpha>
+            </state>
+        </layer>
+    </OEObjectAnim>
+
+    <OEObjectAnim name="ING_FadeOutToTop" loopCount="0" playbackType="Normal">
+        <layer index="0">
+            <state tweenTime="0.0">
+                <position>0,0</position>
+                <alpha>1.0</alpha>
+            </state>
+            <state tweenTime="0.25" tweenType="EaseInOut">
+                <position>0,96</position>
+                <alpha>0.0</alpha>
+            </state>
+        </layer>
+    </OEObjectAnim>
+
+    <OEObjectAnim name="ING_FadeOutToTop_EOW" loopCount="0" playbackType="Normal">
+        <layer index="0">
+            <state tweenTime="0.0" tweenType="Linear">
+                <position>0,0</position>
+                <alpha>1.0</alpha>
+            </state>
+            <state tweenTime="0.25" tweenType="EaseInOut">
+                <position>0,96</position>
+                <alpha>0.0</alpha>
+            </state>
+        </layer>
+    </OEObjectAnim>
+
+    <OEObjectAnim name="moveFromRight" loopCount="0" playbackType="Normal">
+        <layer index="0">
+            <state tweenTime="0.0">
+                <position>64,0</position>
+            </state>
+            <state tweenTime="0.5" tweenType="EaseOut">
+                <position>0,0</position>
+            </state>
+        </layer>
+    </OEObjectAnim>
+
+    <OEObjectAnim name="moveFromLeft" loopCount="0" playbackType="Normal">
+        <layer index="0">
+            <state tweenTime="0.0">
+                <position>-64,0</position>
+				<color>1.0,1.0,1.0,0.0</color>
+            </state>
+            <state tweenTime="0.5" tweenType="EaseOut">
+                <position>0,0</position>
+				<color>1.0,1.0,1.0,1.0</color>
+            </state>
+        </layer>
+    </OEObjectAnim>
+
+    <OEObjectAnim name="moveOutRight" loopCount="0" playbackType="Normal">
+        <layer index="0">
+            <state tweenTime="0.0">
+                <position>0,0</position>
+                <color>1.0,1.0,1.0,1.0</color>
+            </state>
+            <state tweenTime="0.5" tweenType="EaseOut">
+                <position>64,0</position>
+                <color>1.0,1.0,1.0,0.0</color>
+            </state>
+        </layer>
+    </OEObjectAnim>
+
+    <OEObjectAnim name="moveOutLeft" loopCount="0" playbackType="Normal">
+        <layer index="0">
+            <state tweenTime="0.0">
+                <position>0,0</position>
+            </state>
+            <state tweenTime="0.5" tweenType="EaseOut">
+                <position>-64,0</position>
+            </state>
+        </layer>
+    </OEObjectAnim>
+
+    <OEObjectAnim name="mainToLevelSelect" loopCount="0" playbackType="Normal">
+        <layer index="0">
+            <state tweenTime="2.0">
+                <position>0,0</position>
+                <alpha>1.0</alpha>
+            </state>
+            <state tweenTime="1.0" tweenType="EaseOut">
+                <position>-128,0</position>
+                <alpha>0.0</alpha>
+                <scale>4.0</scale>
+            </state>
+        </layer>
+    </OEObjectAnim>
+
+    <OEObjectAnim name="ING_SlideOutTotals" loopCount="0" playbackType="Normal">
+        <layer index="0">
+            <state tweenTime="0.0">
+                <position>0,0</position>
+            </state>
+            <state tweenTime="0.25" tweenType="EaseInOut">
+                <position>-144,0</position>
+            </state>
+        </layer>
+    </OEObjectAnim>
+
+    <OEObjectAnim name="ING_SlideInTotals" loopCount="0" playbackType="Normal">
+        <layer index="0">
+            <state tweenTime="0.0">
+                <position>-144,0</position>
+            </state>
+            <state tweenTime="0.25" tweenType="EaseInOut">
+                <position>0,0</position>
+            </state>
+        </layer>
+    </OEObjectAnim>
+
+    <OEObjectAnim name="ING_SlideDownSystem" loopCount="0" playbackType="Normal">
+        <layer index="0">
+            <state tweenTime="0.0">
+                <position>0,0</position>
+            </state>
+            <state tweenTime="0.25" tweenType="EaseInOut">
+                <position>0,-96</position>
+            </state>
+        </layer>
+    </OEObjectAnim>
+
+    <OEObjectAnim name="ING_SlideUpSystem" loopCount="0" playbackType="Normal">
+        <layer index="0">
+            <state tweenTime="0.0">
+                <position>0,-96</position>
+            </state>
+            <state tweenTime="0.25" tweenType="EaseInOut">
+                <position>0,0</position>
+            </state>
+        </layer>
+    </OEObjectAnim>
+
+    <OEObjectAnim name="ING_SlideDownSystem_full" loopCount="0" playbackType="Normal">
+        <layer index="0">
+            <state tweenTime="0.0">
+                <position>0,0</position>
+            </state>
+            <state tweenTime="0.25" tweenType="EaseInOut">
+                <position>0,-72</position>
+            </state>
+        </layer>
+    </OEObjectAnim>
+
+    <OEObjectAnim name="ING_SlideUpSystem_full" loopCount="0" playbackType="Normal">
+        <layer index="0">
+            <state tweenTime="0.0">
+                <position>0,-64</position>
+            </state>
+            <state tweenTime="0.25" tweenType="EaseInOut">
+                <position>0,0</position>
+            </state>
+        </layer>
+    </OEObjectAnim>
+
+    <OEObjectAnim name="ING_SlideDownBuildBar" loopCount="0" playbackType="Normal">
+        <layer index="0">
+            <state tweenTime="0.0">
+                <alpha>1.0</alpha>
+                <position>0,0</position>
+            </state>
+            <state tweenTime="0.25" tweenType="EaseInOut">
+                <alpha>1.0</alpha>
+                <position>0,-96</position>
+            </state>
+        </layer>
+    </OEObjectAnim>
+
+    <OEObjectAnim name="ING_SlideUpBuildBar" loopCount="0" playbackType="Normal">
+        <layer index="0">
+            <state tweenTime="0.0">
+                <alpha>1.0</alpha>
+                <position>0,-96</position>
+            </state>
+            <state tweenTime="0.25" tweenType="EaseInOut">
+                <alpha>1.0</alpha>
+                <position>0,0</position>
+            </state>
+        </layer>
+    </OEObjectAnim>
+
+    <OEObjectAnim name="ING_SlowRotate" loopCount="-1" playbackType="Normal">
+        <layer index="0">
+            <state tweenTime="0.0">
+                <rotation>0</rotation>
+            </state>
+            <state tweenTime="60" tweenType="Linear">
+                <rotation>3.14159265f</rotation>
+            </state>
+        </layer>
+    </OEObjectAnim>
+
+    <OEObjectAnim name="ING_MedRotate" loopCount="-1" playbackType="Normal">
+        <layer index="0">
+            <state tweenTime="0.0">
+                <rotation>0</rotation>
+            </state>
+            <state tweenTime="60" tweenType="Linear">
+                <rotation>6.282f</rotation>
+            </state>
+        </layer>
+    </OEObjectAnim>
+
+    <OEObjectAnim name="ING_ScaleUp" loopCount="0" playbackType="Normal">
+        <layer index="0">
+            <state tweenTime="0.0">
+                <scale>0.0,0.0</scale>
+            </state>
+            <state tweenTime="0.2" tweenType="EaseInOut">
+                <scale>1.0,1.0</scale>
+            </state>
+        </layer>
+    </OEObjectAnim>
+
+    <OEObjectAnim name="ING_ScaleDown" loopCount="0" playbackType="Normal">
+        <layer index="0">
+            <state tweenTime="0.0">
+                <scale>1.0,1.0</scale>
+            </state>
+            <state tweenTime="0.2" tweenType="EaseInOut">
+                <scale>0.0,0.0</scale>
+            </state>
+        </layer>
+    </OEObjectAnim>
+
+    <OEObjectAnim name="ING_TowerXPUp" loopCount="0" playbackType="Normal">
+        <layer index="0">
+            <state tweenTime="0.0">
+                <color>1,1,1,1</color>
+                <scale>1.5,1.5</scale>
+            </state>
+            <state tweenTime="0.25" tweenType="EaseOut">
+                <color>0.5,0.85,1,0.8</color>
+                <scale>1.0,1.0</scale>
+            </state>
+        </layer>
+    </OEObjectAnim>
+
+<OEObjectAnim name="ING_PreEndWaveBlockAppear" loopCount="0" playbackType="Normal">
+    <layer index="0">
+        <state tweenTime="0.0">
+            <alpha>1.0</alpha>
+            <scale>1.0,1.0</scale>
+        </state>
+        <state tweenTime="0.15" tweenType="EaseOutIn">
+            <alpha>1.0</alpha>
+            <scale>1.0,1.0</scale>
+        </state>
+        <state tweenTime="0.35">
+            <alpha>0.125</alpha>
+            <scale>0.0,1.0</scale>
+        </state>
+    </layer>
+</OEObjectAnim>
+
+<OEObjectAnim name="ING_EndWaveBlockAppear" loopCount="0" playbackType="Normal">
+    <layer index="0">
+        <state tweenTime="0.0">
+            <alpha>0.125</alpha>
+            <scale>0.0,1.0</scale>
+        </state>
+        <state tweenTime="0.25" tweenType="EaseIn">
+            <alpha>1.0</alpha>
+            <scale>1.0,1.0</scale>
+        </state>
+        <state tweenTime="0.5">
+            <alpha>1.0</alpha>
+            <scale>1.0,1.0</scale>
+        </state>
+    </layer>
+</OEObjectAnim>
+
+<OEObjectAnim name="ING_DialogOpen" loopCount="0" playbackType="Normal">
+    <layer index="0">
+        <state tweenTime="0.0">
+            <alpha>0.25</alpha>
+            <scale>1.2,0.0</scale>
+        </state>
+        <state tweenTime="0.175" tweenType="EaseInOut">
+            <alpha>1.0</alpha>
+            <scale>1.0,1.2</scale>
+        </state>
+        <state tweenTime="0.25" tweenType="EaseIn">
+            <scale>1.0,1.0</scale>
+        </state>
+    </layer>
+</OEObjectAnim>
+
+<OEObjectAnim name="ING_DialogClose" loopCount="0" playbackType="Normal">
+    <layer index="0">
+        <state tweenTime="0.0">
+            <alpha>1.0</alpha>
+        </state>
+        <state tweenTime="0.1" tweenType="EaseInOut">
+            <alpha>0.0</alpha>
+        </state>
+    </layer>
+</OEObjectAnim>
+
+<OEObjectAnim name="ING_AttractGlow" loopCount="-1" playbackType="Normal">
+    <layer index="0">
+        <state tweenTime="0.0">
+            <!-- <alpha>0.0</alpha> -->
+            <scale>0.25,0.25</scale>
+            <rotation>0</rotation>
+        </state>
+        <state tweenTime="0.25" tweenType="Linear">
+            <!-- <alpha>1.0</alpha> -->
+            <scale>1.0,1.0</scale>
+            <rotation>0</rotation>
+        </state>
+        <state tweenTime="0.75" tweenType="Linear">
+            <!-- <alpha>0.0</alpha> -->
+            <scale>1.5,1.5</scale>
+            <rotation>1.5f</rotation>
+        </state>
+    </layer>
+</OEObjectAnim>
+
+<OEObjectAnim name="ING_DialogContinue" loopCount="-1" playbackType="Normal">
+    <layer index="0">
+        <state tweenTime="0.0">
+            <position>0.0,0.0</position>
+        </state>
+        <state tweenTime="0.485" tweenType="EaseInOut">
+            <position>-10.0,0.0</position>
+        </state>
+        <state tweenTime="0.495" tweenType="EaseInOut">
+            <position>2.0,0.0</position>
+        </state>
+        <state tweenTime="0.5">
+            <position>0.0,0.0</position>
+        </state>
+    </layer>
+</OEObjectAnim>
+
+
+<OEObjectAnim name="INTOrigin8Logo" loopCount="0" playbackType="Normal">
+    <layer index="0">
+        <state tweenTime="0.0">
+            <alpha>0.0</alpha>
+            <scale>0.0,0.0</scale>
+            <position>0.0,64.0</position>
+        </state>
+        <state tweenTime="0.75">
+            <alpha>0.0</alpha>
+            <scale>1.2,1.2</scale>
+            <position>0.0,0.0</position>
+        </state>
+        <state tweenTime="0.8">
+            <alpha>0.0</alpha>
+            <scale>1.0,1.0</scale>
+            <position>0.0,0.0</position>
+        </state>
+        <state tweenTime="2.5">
+            <alpha>1.0</alpha>
+            <scale>1.0,1.0</scale>
+            <position>0.0,0.0</position>
+        </state>
+        <state tweenTime="3.0">
+            <alpha>0.0</alpha>
+            <scale>0.5,0.0</scale>
+            <position>-192.0,0.0</position>
+        </state>
+    </layer>
+</OEObjectAnim>
+
+<OEObjectAnim name="INTBackgroundScroll" loopCount="0" playbackType="Normal">
+    <layer index="0">
+        <state tweenTime="0.0">
+            <position>0,0</position>
+        </state>
+        <state tweenTime="44.0" tweenType="Linear">
+            <position>-256,0</position>
+        </state>
+    </layer>
+</OEObjectAnim>
+
+<OEObjectAnim name="INTPlanet_1_2" loopCount="0" playbackType="Normal">
+    <layer index="0">
+        <state tweenTime="0.0">
+            <position>0,0</position>
+            <scale>1.0,1.0</scale>
+        </state>
+        <state tweenTime="20.0" tweenType="EaseInOut">
+            <position>-512,0</position>
+            <scale>1.75,1.75</scale>
+        </state>
+    </layer>
+</OEObjectAnim>
+
+<OEObjectAnim name="INTPlanet_2_3" loopCount="0" playbackType="Normal">
+    <layer index="0">
+        <state tweenTime="0.0">
+            <position>-512,0</position>
+            <scale>1.75,1.75</scale>
+        </state>
+        <state tweenTime="6.0" tweenType="EaseInOut">
+            <position>-608,0</position>
+            <scale>1.75,1.75</scale>
+        </state>
+    </layer>
+</OEObjectAnim>
+
+<OEObjectAnim name="INTPlanetReset" loopCount="0" playbackType="Normal">
+    <layer index="0">
+        <state tweenTime="0.0">
+            <position>-608,0</position>
+            <scale>1.25,1.25</scale>
+        </state>
+        <state tweenTime="0.01">
+            <position>-256,-32</position>
+            <scale>0.15,0.15</scale>
+        </state>
+        <state tweenTime="20.0">
+            <position>-256,0</position>
+            <scale>0.5,0.5</scale>
+        </state>
+    </layer>
+</OEObjectAnim>
+
+<OEObjectAnim name="INTWormholeAppear" loopCount="0" playbackType="Normal">
+    <layer index="0">
+        <state tweenTime="0.0">
+            <position>0,80</position>
+            <alpha>0.0</alpha>
+        </state>
+        <state tweenTime="16.0" tweenType="Linear">
+            <position>-256,80</position>
+            <alpha>1.0</alpha>
+        </state>
+    </layer>
+</OEObjectAnim>
+
+<OEObjectAnim name="INTWormholeLeave" loopCount="0" playbackType="Normal">
+    <layer index="0">
+        <state tweenTime="0.0">
+            <position>-256,80</position>
+            <scale>1.0,1.0</scale>
+            <alpha>1.0</alpha>
+        </state>
+        <state tweenTime="12.0" tweenType="Linear">
+            <position>-216,104</position>
+            <scale>0.05,0.05</scale>
+            <alpha>1.0</alpha>
+        </state>
+    </layer>
+</OEObjectAnim>
+
+<OEObjectAnim name="INTWormRotate" loopCount="-1" playbackType="Normal">
+    <layer index="0">
+        <state tweenTime="0.0">
+            <rotation>0</rotation>
+        </state>
+        <state tweenTime="200" tweenType="Linear">
+            <rotation>-12.5662531f</rotation>
+            <!--<rotation>-6.28318531f</rotation>-->
+        </state>
+    </layer>
+</OEObjectAnim>
+
+<OEObjectAnim name="INTWormRotateInside" loopCount="-1" playbackType="Normal">
+    <layer index="0">
+        <state tweenTime="0.0">
+            <rotation>0</rotation>
+        </state>
+        <state tweenTime="200" tweenType="Linear">
+            <rotation>-25.12f</rotation>
+        </state>
+    </layer>
+</OEObjectAnim>
+
+<OEObjectAnim name="INTWormLines" loopCount="-1" playbackType="Normal">
+    <layer index="0">
+        <state tweenTime="0.0">
+            <alpha>0.0</alpha>
+        </state>
+        <state tweenTime="0.125" tweenType="Linear">
+            <alpha>1.0</alpha>
+        </state>
+        <state tweenTime="0.2" tweenType="Linear">
+            <alpha>0.5</alpha>
+        </state>
+        <state tweenTime="0.3" tweenType="Linear">
+            <alpha>1.0</alpha>
+        </state>
+        <state tweenTime="0.5" tweenType="Linear">
+            <alpha>0.5</alpha>
+        </state>
+    </layer>
+</OEObjectAnim>
+
+<OEObjectAnim name="INTWhiteOut" loopCount="0" playbackType="Normal">
+    <layer index="0">
+        <state tweenTime="0.0">
+            <alpha>0.0</alpha>
+        </state>
+        <state tweenTime="3.0" tweenType="Linear">
+            <alpha>1.0</alpha>
+        </state>
+    </layer>
+</OEObjectAnim>
+
+<OEObjectAnim name="INTWhiteDown" loopCount="0" playbackType="Normal">
+    <layer index="0">
+        <state tweenTime="0.0">
+            <alpha>1.0</alpha>
+        </state>
+        <state tweenTime="0.5" tweenType="Linear">
+            <alpha>0.0</alpha>
+        </state>
+    </layer>
+</OEObjectAnim>
+
+<OEObjectAnim name="INTGlowHolder" loopCount="0" playbackType="Normal">
+    <layer index="0">
+        <state tweenTime="0.0">
+            <scale>0.15,0.15</scale>
+        </state>
+        <state tweenTime="14.5" tweenType="Linear">
+            <scale>1.0,1.0</scale>
+        </state>
+        <state tweenTime="15.0" tweenType="Linear">
+            <scale>1.75,1.75</scale>
+        </state>
+    </layer>
+</OEObjectAnim>
+
+<OEObjectAnim name="INTGlowThrob" loopCount="-1" playbackType="Normal">
+    <layer index="0">
+        <state tweenTime="0.0">
+            <scale>1.0,1.0</scale>
+        </state>
+        <state tweenTime="0.5" tweenType="Linear">
+            <scale>1.15,1.15</scale>
+        </state>
+        <state tweenTime="0.75" tweenType="Linear">
+            <scale>1.0,1.0</scale>
+        </state>
+    </layer>
+</OEObjectAnim>
+
+<OEObjectAnim name="INTStoryClose" loopCount="0" playbackType="Normal">
+    <layer index="0">
+        <state tweenTime="0.0">
+            <alpha>1.0</alpha>
+            <scale>1.0,1.0</scale>
+        </state>
+        <state tweenTime="0.92">
+            <alpha>1.0</alpha>
+            <scale>1.0,1.0</scale>
+        </state>
+        <state tweenTime="0.9225" tweenType="EaseInOut">
+            <alpha>1.0</alpha>
+            <scale>1.2,1.0</scale>
+        </state>
+        <state tweenTime="1.0" tweenType="EaseIn">
+            <alpha>1.0</alpha>
+            <scale>1.0,0.0</scale>
+        </state>
+    </layer>
+</OEObjectAnim>
+
+<OEObjectAnim name="INTSentinelIn" loopCount="0" playbackType="Normal">
+    <layer index="0">
+        <state tweenTime="0.0">
+            <position>0,0</position>
+            <alpha>0.0</alpha>
+            <scale>1.25,1.25</scale>
+        </state>
+        <state tweenTime="22.0" tweenType="EaseInOut">
+            <position>0,-112</position>
+            <alpha>1.0</alpha>
+            <scale>0.75,0.75</scale>
+        </state>
+    </layer>
+</OEObjectAnim>
+
+<OEObjectAnim name="INTAlienOut" loopCount="0" playbackType="Normal">
+    <layer index="0">
+        <state tweenTime="0.0">
+            <alpha>1.0</alpha>
+            <scale>0.05,0.05</scale>
+            <position>-172,0</position>
+            <rotation>-1.0</rotation>
+            <color>0,0,0,1</color>
+        </state>
+        <state tweenTime="10.75" tweenType="EaseInOut">
+            <alpha>1.0</alpha>
+            <scale>0.65,0.65</scale>
+            <position>-16,-16</position>
+            <rotation>-0.25</rotation>
+            <color>0,0,0,1</color>
+        </state>
+        <state tweenTime="11.5" tweenType="EaseInOut">
+            <alpha>1.0</alpha>
+            <scale>0.8,0.8</scale>
+            <position>0,0</position>
+            <rotation>0.0</rotation>
+            <color>0,0,0,1</color>
+        </state>
+    </layer>
+</OEObjectAnim>
+
+<OEObjectAnim name="INTAlienMove" loopCount="0" playbackType="Normal">
+    <layer index="0">
+        <state tweenTime="0.0">
+            <rotation>0.0</rotation>
+            <scale>0.8,0.8</scale>
+            <position>0.0,0.0</position>
+            <color>0,0,0,1</color>
+        </state>
+        <state tweenTime="0.5">
+            <rotation>0.0</rotation>
+            <scale>0.8,0.8</scale>
+            <position>0.0,0.0</position>
+            <color>1,1,1,1</color>
+        </state>
+        <state tweenTime="16.0" tweenType="EaseInOut">
+            <rotation>0.0</rotation>
+            <scale>0.02,0.02</scale>
+            <position>164,200</position>
+            <color>1,1,1,1</color>
+        </state>
+    </layer>
+</OEObjectAnim>
+
+<OEObjectAnim name="INTEnd" loopCount="0" playbackType="Normal">
+    <layer index="0">
+        <state tweenTime="0.0">
+            <alpha>0.25</alpha>
+            <scale>1.2,0.0</scale>
+        </state>
+        <state tweenTime="0.175" tweenType="EaseInOut">
+            <alpha>1.0</alpha>
+            <scale>1.0,1.2</scale>
+        </state>
+        <state tweenTime="0.25" tweenType="EaseIn">
+            <alpha>1.0</alpha>
+            <scale>1.0,1.0</scale>
+        </state>
+        <state tweenTime="1.5">
+            <alpha>1.0</alpha>
+            <scale>1.0,1.0</scale>
+        </state>
+        <state tweenTime="2.0">
+            <alpha>0.0</alpha>
+            <scale>1.0,1.0</scale>
+        </state>
+    </layer>
+</OEObjectAnim>
+
+<OEObjectAnim name="Icon_Highlight" loopCount="-1" playbackType="Normal">
+    <layer index="0">
+        <state tweenTime="0.0">
+            <rotation>0</rotation>
+        </state>
+        <state tweenTime="1.5" tweenType="Linear">
+            <rotation>-6.28318531f</rotation>
+        </state>
+    </layer>
+</OEObjectAnim>
+
+<OEObjectAnim name="Transition_PopUp" loopCount="0" playbackType="Normal">
+    <layer index="0">
+        <state tweenTime="0.0" tweenType="Linear">
+            <alpha>0.25</alpha>
+            <scale>0.0,0.0</scale>
+        </state>
+        <state tweenTime="0.2" tweenType="Linear">
+            <alpha>1.0</alpha>
+            <scale>1.2,1.2</scale>
+        </state>
+        <state tweenTime="0.25" tweenType="Linear">
+            <alpha>1.0</alpha>
+            <scale>1.0,1.0</scale>
+        </state>
+    </layer>
+</OEObjectAnim>
+
+<OEObjectAnim name="Transition_PopDown" loopCount="0" playbackType="Normal">
+    <layer index="0">
+        <state tweenTime="0.0" tweenType="Linear">
+            <alpha>1.0</alpha>
+            <scale>1.0,1.0</scale>
+        </state>
+        <state tweenTime="0.1" tweenType="Linear">
+            <alpha>1.0</alpha>
+            <scale>1.2,1.2</scale>
+        </state>
+        <state tweenTime="0.3" tweenType="Linear">
+            <alpha>0.25</alpha>
+            <scale>0.0,0.0</scale>
+        </state>
+    </layer>
+</OEObjectAnim>
+
+</DataObjectAnimSet>
